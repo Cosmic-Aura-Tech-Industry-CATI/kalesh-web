@@ -1,0 +1,162 @@
+/* ROOT LAYOUT FIX */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-layout {
+  min-height: 100vh;              /* full screen height */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* =========================
+   KALESH GLOBAL THEME
+========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b0b;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+/* TEXT COLORS */
+.text-muted {
+  color: #b3b3b3 !important;
+}
+
+/* LINKS */
+a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff6a00;
+}
+
+/* SECTIONS */
+.section-dark {
+  background-color: #111111;
+}
+
+/* =========================
+   BUTTON THEME
+========================= */
+
+.btn-kalesh {
+  background: linear-gradient(135deg, #ff2a2a, #ff6a00);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.btn-kalesh:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(255, 106, 0, 1);
+  color: #ffffff;
+}
+
+/* OUTLINE GOLD BUTTON */
+.btn-outline-kalesh {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-kalesh:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  color: #ff6a00;
+}
+
+/* =========================
+   NAVBAR THEME
+========================= */
+
+.navbar {
+  background-color: #0b0b0b !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #ffffff !important;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-size: 14px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff6a00 !important;
+}
+
+/* =========================
+   FOOTER THEME
+========================= */
+
+footer {
+  background-color: #0b0b0b;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* =========================
+   LOGO GLOW
+========================= */
+
+.logo-glow {
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.7));
+}
+
+
+/* ======================
+   KALESH FOOTER THEME
+====================== */
+
+.kalesh-footer {
+  background: linear-gradient(
+    180deg,
+    #0b0b0b,
+    #111111,
+    #0b0b0b
+  );
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.kalesh-footer p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #ff6a00;
+}
+
