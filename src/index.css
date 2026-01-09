@@ -1,24 +1,20 @@
-/* ROOT LAYOUT FIX */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-}
+/* ==================================================
+   1. ROOT & GLOBAL LAYOUT
+================================================== */
 
-.app-layout {
-  min-height: 100vh;              /* full screen height */
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-/* =========================
-   KALESH GLOBAL THEME
-========================= */
-
+html,
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
   background-color: #0b0b0b;
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -26,12 +22,14 @@ body {
     sans-serif;
 }
 
-/* TEXT COLORS */
+/* ==================================================
+   2. GLOBAL TEXT & LINKS
+================================================== */
+
 .text-muted {
   color: #b3b3b3 !important;
 }
 
-/* LINKS */
 a {
   color: #d4af37;
   text-decoration: none;
@@ -41,14 +39,9 @@ a:hover {
   color: #ff6a00;
 }
 
-/* SECTIONS */
-.section-dark {
-  background-color: #111111;
-}
-
-/* =========================
-   BUTTON THEME
-========================= */
+/* ==================================================
+   3. BUTTON THEME
+================================================== */
 
 .btn-kalesh {
   background: linear-gradient(135deg, #ff2a2a, #ff6a00);
@@ -64,10 +57,8 @@ a:hover {
 .btn-kalesh:hover {
   transform: scale(1.06);
   box-shadow: 0 0 40px rgba(255, 106, 0, 1);
-  color: #ffffff;
 }
 
-/* OUTLINE GOLD BUTTON */
 .btn-outline-kalesh {
   background: transparent;
   border: 1px solid #d4af37;
@@ -82,9 +73,9 @@ a:hover {
   color: #ff6a00;
 }
 
-/* =========================
-   NAVBAR THEME
-========================= */
+/* ==================================================
+   4. NAVBAR
+================================================== */
 
 .navbar {
   background-color: #0b0b0b !important;
@@ -98,7 +89,7 @@ a:hover {
 
 .navbar-nav .nav-link {
   color: #ffffff !important;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -106,26 +97,8 @@ a:hover {
 }
 
 /* =========================
-   FOOTER THEME
+   KALESH FOOTER (DARK THEME)
 ========================= */
-
-footer {
-  background-color: #0b0b0b;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-/* =========================
-   LOGO GLOW
-========================= */
-
-.logo-glow {
-  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.7));
-}
-
-
-/* ======================
-   KALESH FOOTER THEME
-====================== */
 
 .kalesh-footer {
   background: linear-gradient(
@@ -134,29 +107,471 @@ footer {
     #111111,
     #0b0b0b
   );
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  color: #ffffff;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand img {
+  width: 48px;
+}
+
+.footer-brand h3 {
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* COMING SOON BUTTON */
+.coming-soon-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff2a2a, #ff6a00);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.6);
+}
+
+/* TITLES */
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* LISTS */
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+
+.footer-list li:hover {
+  color: #ff6a00;
+}
+
+/* =========================
+   KALESH FOOTER (DARK THEME)
+========================= */
+
+.kalesh-footer {
+  background: linear-gradient(
+    180deg,
+    #0b0b0b,
+    #111111,
+    #0b0b0b
+  );
+  color: #ffffff;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand img {
+  width: 48px;
+}
+
+.footer-brand h3 {
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* COMING SOON BUTTON */
+.coming-soon-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff2a2a, #ff6a00);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.6);
+}
+
+/* TITLES */
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* LISTS */
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+
+.footer-list li:hover {
+  color: #ff6a00;
+}
+
+/* =========================
+   FOOTER BOTTOM BAR
+========================= */
+
+.footer-bottom {
+  margin-top: 40px;
   padding: 20px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* COPYRIGHT */
+.footer-bottom .col-md-4:first-child {
+  font-size: 16px;
+  padding-left: 12px;
+  color: #ffffff;
+}
+
+/* TERMS & PRIVACY */
+.footer-bottom a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ff6a00;
+}
+
+/* SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px; /* 👈 ICONS KE BEECH SPACE */
+}
+
+.footer-socials a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ff6a00;
+  transform: scale(1.2);
+}
+
+/* =========================
+   MOBILE FOOTER FIX
+========================= */
+
+@media (max-width: 768px) {
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom .col-md-4 {
+    text-align: center !important;
+    margin-bottom: 8px;
+  }
+}
+
+
+
+
+/* ==================================================
+   6. COMMON UI ELEMENTS
+================================================== */
+
+.logo-glow {
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.7));
+}
+
+.kalesh-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    transparent
+  );
+}
+
+/* ==================================================
+   7. HOME HERO SECTION
+================================================== */
+
+.home-wrapper {
+  width: 100%;
+  
+}
+
+.home-hero {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #0b0b0b;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.hero-content {
+  padding: 50px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  
+}
+
+.hero-image {
+  padding: 80px;
   text-align: center;
 }
 
-.kalesh-footer p {
-  margin: 0;
-  color: #ffffff;
-  font-size: 14px;
+.hero-image img {
+  max-width: 420px;
 }
 
-.footer-links {
-  margin-bottom: 8px;
+/* =========================
+   HERO BUTTON GROUP
+========================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 70px;
+  flex-wrap: wrap;
 }
 
-.footer-links a {
-  margin: 0 12px;
-  color: #d4af37;
-  text-decoration: none;
-  font-weight: 500;
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
-.footer-links a:hover {
-  color: #ff6a00;
+
+/* ==================================================
+   8. INFO SECTION
+================================================== */
+
+.kalesh-info-section {
+  background-color: #0b0b0b;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.info-content {
+  padding: 0px 0px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  text-align: center;
+}
+
+.info-image-row {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+.info-full-image {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  display: block;
+  
+}
+
+/* ==================================================
+   9. BOOTSTRAP FIXES
+================================================== */
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ==================================================
+   10. MOBILE RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-image {
+    padding: 40px 20px;
+  }
+
+  .hero-image img {
+    max-width: 260px;
+  }
+
+  .info-content {
+    padding: 50px 20px;
+  }
+}
+
+/* =========================
+   POLL INFO DIV
+========================= */
+
+.poll-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.poll-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.poll-content p {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .poll-content {
+    text-align: center;
+  }
+
+  .poll-content h2 {
+    font-size: 28px;
+  }
+
+  .poll-image {
+    max-width: 260px;
+  }
+}
+
+
+/* =========================
+   PROFILE INFO DIV
+========================= */
+
+.profile-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.profile-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.profile-content p {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .profile-content {
+    text-align: center;
+  }
+
+  .profile-content h2 {
+    font-size: 28px;
+  }
+
+  .profile-image {
+    max-width: 260px;
+  }
+}
+
+/* =========================
+   ANONYMOUS CHAT INFO DIV
+========================= */
+
+.chat-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.chat-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.chat-content p {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .chat-content {
+    text-align: center;
+  }
+
+  .chat-content h2 {
+    font-size: 28px;
+  }
+
+  .chat-image {
+    max-width: 260px;
+  }
+}
+
+/* =========================
+   CREATE POLLS INFO DIV
+========================= */
+
+.create-poll-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.create-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .create-content {
+    text-align: center;
+  }
+
+  .create-content h2 {
+    font-size: 30px;
+  }
+
+  .create-poll-image {
+    max-width: 260px;
+  }
 }
 
