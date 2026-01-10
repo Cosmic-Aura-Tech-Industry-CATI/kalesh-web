@@ -6,7 +6,7 @@ function Home() {
         <div className="row align-items-center g-0">
           {/* LEFT CONTENT */}
           <div className="col-md-6 hero-content">
-            <h1>India’s first anonymous app</h1>
+            <h1>India’s First Anonymous Social Media Platform</h1>
 
             <p className="text-muted mt-4 fs-5">
               A platform where your opinion matters, not your identity.
@@ -79,13 +79,14 @@ function Home() {
           {/* RIGHT CONTENT COLUMN */}
           <div className="col-md-6 poll-content">
             <h2>
-              Real-time poll broadcasting with instant voting and high user
+              Live poll broadcasting with instant voting and maximum user
               engagement
             </h2>
 
             <p className="text-muted mt-3">
-              Whether you are a new user or an established influencer, we
-              provide real engagement with complete fairness for everyone.
+              Whether you’re a new user or a well-established influencer, we
+              deliver fair, equal, and real engagement for everyone on the
+              platform
             </p>
           </div>
         </div>
@@ -98,12 +99,13 @@ function Home() {
           {/* LEFT CONTENT COLUMN */}
           <div className="col-md-6 profile-content mb-4 mb-md-0">
             <h2>
-              An anonymous platform that offers complete profile anonymity.
+              An anonymous platform that provides complete profile anonymity.
             </h2>
 
             <p className="text-muted mt-4">
-              India’s first anonymous platform that lets you create an anonymous
-              social media profile.
+              India’s first anonymous social media platform that allows users to
+              create a fully anonymous profile for safe, private, and
+              judgment-free online interaction.
             </p>
           </div>
 
@@ -133,11 +135,12 @@ function Home() {
 
           {/* RIGHT CONTENT COLUMN */}
           <div className="col-md-6 chat-content">
-            <h2>We chat anonymously</h2>
+            <h2>We chat securely and anonymously</h2>
 
             <p className="text-muted mt-4">
-              When our vibes match with a stranger, we chat one-on-one
-              individually and anonymously.
+              When your vibe matches with a stranger, you connect through
+              one-on-one private chats that are secure, anonymous, and
+              judgment-free.
             </p>
           </div>
         </div>
@@ -149,7 +152,10 @@ function Home() {
         <div className="row align-items-center">
           {/* LEFT CONTENT COLUMN */}
           <div className="col-md-6 create-content mb-4 mb-md-0">
-            <h2>Create polls freely, your way.</h2>
+            <h2>Create polls freely, your way</h2>
+            <p className="text-muted mt-4">
+              With real-time voting, instant reach, and high user engagement.
+            </p>
           </div>
 
           {/* RIGHT IMAGE COLUMN */}
@@ -161,7 +167,6 @@ function Home() {
             />
           </div>
         </div>
-        
       </div>
     </div>
   );
