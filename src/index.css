@@ -1,24 +1,20 @@
-/* ROOT LAYOUT FIX */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-}
+/* ==================================================
+   1. ROOT & GLOBAL LAYOUT
+================================================== */
 
-.app-layout {
-  min-height: 100vh;              /* full screen height */
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-/* =========================
-   KALESH GLOBAL THEME
-========================= */
-
+html,
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
   background-color: #0b0b0b;
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -26,12 +22,14 @@ body {
     sans-serif;
 }
 
-/* TEXT COLORS */
+/* ==================================================
+   2. GLOBAL TEXT & LINKS
+================================================== */
+
 .text-muted {
   color: #b3b3b3 !important;
 }
 
-/* LINKS */
 a {
   color: #d4af37;
   text-decoration: none;
@@ -41,14 +39,9 @@ a:hover {
   color: #ff6a00;
 }
 
-/* SECTIONS */
-.section-dark {
-  background-color: #111111;
-}
-
-/* =========================
-   BUTTON THEME
-========================= */
+/* ==================================================
+   3. BUTTON THEME
+================================================== */
 
 .btn-kalesh {
   background: linear-gradient(135deg, #ff2a2a, #ff6a00);
@@ -64,10 +57,8 @@ a:hover {
 .btn-kalesh:hover {
   transform: scale(1.06);
   box-shadow: 0 0 40px rgba(255, 106, 0, 1);
-  color: #ffffff;
 }
 
-/* OUTLINE GOLD BUTTON */
 .btn-outline-kalesh {
   background: transparent;
   border: 1px solid #d4af37;
@@ -82,9 +73,9 @@ a:hover {
   color: #ff6a00;
 }
 
-/* =========================
-   NAVBAR THEME
-========================= */
+/* ==================================================
+   4. NAVBAR
+================================================== */
 
 .navbar {
   background-color: #0b0b0b !important;
@@ -98,7 +89,7 @@ a:hover {
 
 .navbar-nav .nav-link {
   color: #ffffff !important;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -106,26 +97,8 @@ a:hover {
 }
 
 /* =========================
-   FOOTER THEME
+   KALESH FOOTER (DARK THEME)
 ========================= */
-
-footer {
-  background-color: #0b0b0b;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-/* =========================
-   LOGO GLOW
-========================= */
-
-.logo-glow {
-  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.7));
-}
-
-
-/* ======================
-   KALESH FOOTER THEME
-====================== */
 
 .kalesh-footer {
   background: linear-gradient(
@@ -134,258 +107,464 @@ footer {
     #111111,
     #0b0b0b
   );
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
-  padding: 20px 0;
-  text-align: center;
+  color: #ffffff;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
-.kalesh-footer p {
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand img {
+  width: 48px;
+}
+
+.footer-brand h3 {
+  font-weight: 700;
   margin: 0;
   color: #ffffff;
-  font-size: 14px;
 }
 
-.footer-links {
-  margin-bottom: 8px;
+/* COMING SOON BUTTON */
+.coming-soon-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff2a2a, #ff6a00);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.6);
 }
 
-.footer-links a {
-  margin: 0 12px;
-  color: #d4af37;
-  text-decoration: none;
+/* TITLES */
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* LISTS */
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
   font-weight: 500;
+  color: #b3b3b3;
+  cursor: pointer;
 }
 
-.footer-links a:hover {
+.footer-list li:hover {
   color: #ff6a00;
 }
 
 /* =========================
-   ABOUT PAGE RESPONSIVE STYLES
+   FOOTER BOTTOM BAR
 ========================= */
 
-/* Base responsive adjustments for About page */
-@media (max-width: 1200px) {
-  .container .row .col-5 img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .container .row .col-5 p {
-    font-size: 1.8em !important;
-    margin-left: 20px !important;
-  }
-
-  .container .row .col-5 .btn-kalesh {
-    margin-left: 20px !important;
-  }
+.footer-bottom {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-@media (max-width: 992px) {
-  /* Tablets */
-  .container .row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .container .row .col-5,
-  .container .row .col-6 {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .container .row .col-5 img {
-    width: 100% !important;
-    max-width: 400px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-
-  .container .row .col-5 p {
-    font-size: 1.5em !important;
-    margin-top: 30px !important;
-    margin-left: 0 !important;
-  }
-
-  .container .row .col-5 .btn-kalesh {
-    margin-left: 0 !important;
-    display: block;
-    margin: 20px auto !important;
-  }
-
-  .container .row .col-6 p {
-    font-size: 1.2em !important;
-    padding: 20px !important;
-  }
-
-  /* Team section */
-  .container .row.mt-5 .col-5 img,
-  .container .row.mt-5 .col-6 img {
-    width: 100% !important;
-    max-width: 500px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-
-  .container .row .col-5.mt-5 > div,
-  .container .row .col-6 > div {
-    margin-top: 20px !important;
-    margin-left: 0 !important;
-    padding: 20px;
-  }
-
-  .container h2 {
-    text-align: center;
-  }
-
-  .container p[style*="font-size:1.5em"] {
-    font-size: 1.2em !important;
-  }
+/* COPYRIGHT */
+.footer-bottom .col-md-4:first-child {
+  font-size: 16px;
+  padding-left: 12px;
+  color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  /* Mobile phones */
-  .container .row .col-5 p {
-    font-size: 1.3em !important;
-    margin-top: 20px !important;
-  }
-
-  .container .row .col-5 .btn-kalesh {
-    width: 180px;
-    padding: 12px 24px;
-    font-size: 1em;
-  }
-
-  .container .row .col-6 p {
-    font-size: 1.1em !important;
-    padding: 15px !important;
-    line-height: 1.4;
-  }
-
-  .container .row.mt-5 .col-5 img,
-  .container .row.mt-5 .col-6 img {
-    max-width: 400px !important;
-  }
-
-  .container p[style*="font-size:1.5em"] {
-    font-size: 1.1em !important;
-    line-height: 1.4;
-  }
-
-  .container h2 {
-    font-size: 1.8em;
-  }
-
-  .container h1.text-center {
-    font-size: 2em;
-    padding: 20px !important;
-  }
-
-  .container .p-5 {
-    padding: 20px !important;
-  }
+/* TERMS & PRIVACY */
+.footer-bottom a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #d4af37;
+  text-decoration: none;
 }
 
-@media (max-width: 576px) {
-  /* Small mobile phones */
-  .container .row .col-5 p {
-    font-size: 1.1em !important;
-  }
-
-  .container .row .col-5 .btn-kalesh {
-    width: 160px;
-    padding: 10px 20px;
-    font-size: 0.9em;
-  }
-
-  .container .row .col-6 p {
-    font-size: 1em !important;
-    padding: 10px !important;
-  }
-
-  .container .row.mt-5 .col-5 img,
-  .container .row.mt-5 .col-6 img {
-    max-width: 300px !important;
-  }
-
-  .container p[style*="font-size:1.5em"] {
-    font-size: 1em !important;
-  }
-
-  .container h2 {
-    font-size: 1.6em;
-  }
-
-  .container h1.text-center {
-    font-size: 1.8em;
-    padding: 15px !important;
-  }
-
-  .container .mt-5 {
-    margin-top: 20px !important;
-  }
-
-  .container h5 {
-    font-size: 0.9em;
-    text-align: center;
-  }
-
-  .container h5 a {
-    display: inline-block;
-    margin-top: 5px;
-  }
+.footer-bottom a:hover {
+  color: #ff6a00;
 }
 
-/* Ensure images don't overflow */
-.container img {
-  max-width: 100%;
-  height: auto;
+/* SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px; /* 👈 ICONS KE BEECH SPACE */
 }
 
-/* Improve button touch area on mobile */
-.container .btn-kalesh {
-  min-height: 44px;
-  padding: 12px 24px;
+.footer-socials a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.3s ease;
 }
 
-/* Fix horizontal scrolling issues */
-.container {
-  overflow-x: hidden;
-}
-
-/* Improve readability on mobile */
-.container p {
-  line-height: 1.5;
+.footer-socials a:hover {
+  color: #ff6a00;
+  transform: scale(1.2);
 }
 
 /* =========================
-   ABOUT PAGE IMAGE SIZES AND SPACING
+   MOBILE FOOTER FIX
 ========================= */
 
-/* Standardize team member image sizes */
-.container .row .col-5 img[src*="assets"],
-.container .row .col-6 img[src*="assets"] {
-  width: 400px !important;
-  height: 300px !important;
-  object-fit: cover;
-  border-radius: 10px;
+@media (max-width: 768px) {
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom .col-md-4 {
+    text-align: center !important;
+    margin-bottom: 8px;
+  }
 }
 
-/* Reduce spacing between images and text */
-.container .row .col-5.mt-5 > div {
-  margin-top: 20px !important;
+
+
+
+/* ==================================================
+   6. COMMON UI ELEMENTS
+================================================== */
+
+.logo-glow {
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.7));
 }
 
-.container .row .col-6 > div {
-  margin-top: 20px !important;
+.kalesh-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    transparent
+  );
 }
 
-/* Adjust logo size if needed */
-.container .row .col-5 img.logo-glow {
-  width: 400px !important;
-  height: 400px !important;
-  object-fit: contain;
+/* ==================================================
+   7. HOME HERO SECTION
+================================================== */
+
+.home-wrapper {
+  width: 100%;
+
+}
+
+.home-hero {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #0b0b0b;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.hero-content {
+  padding: 50px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+
+}
+
+.hero-image {
+  padding: 80px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 420px;
+}
+
+/* =========================
+   HERO BUTTON GROUP
+========================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 70px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+/* ==================================================
+   8. INFO SECTION
+================================================== */
+
+.kalesh-info-section {
+  background-color: #0b0b0b;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.info-content {
+  padding: 0px 0px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  text-align: center;
+}
+
+.info-image-row {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+.info-full-image {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  display: block;
+
+}
+
+/* ==================================================
+   9. BOOTSTRAP FIXES
+================================================== */
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ==================================================
+   10. MOBILE RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-image {
+    padding: 40px 20px;
+  }
+
+  .hero-image img {
+    max-width: 260px;
+  }
+
+  .info-content {
+    padding: 50px 20px;
+  }
+}
+
+/* =========================
+   POLL INFO DIV
+========================= */
+
+.poll-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.poll-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.poll-content p {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .poll-content {
+    text-align: center;
+  }
+
+  .poll-content h2 {
+    font-size: 28px;
+  }
+
+  .poll-image {
+    max-width: 260px;
+  }
+}
+
+
+/* =========================
+   PROFILE INFO DIV
+========================= */
+
+.profile-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.profile-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.profile-content p {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .profile-content {
+    text-align: center;
+  }
+
+  .profile-content h2 {
+    font-size: 28px;
+  }
+
+  .profile-image {
+    max-width: 260px;
+  }
+}
+
+/* =========================
+   ANONYMOUS CHAT INFO DIV
+========================= */
+
+.chat-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.chat-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.chat-content p {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .chat-content {
+    text-align: center;
+  }
+
+  .chat-content h2 {
+    font-size: 28px;
+  }
+
+  .chat-image {
+    max-width: 260px;
+  }
+}
+
+/* =========================
+   CREATE POLLS INFO DIV
+========================= */
+
+.create-poll-image {
+  width: 100%;
+  max-width: 320px;
+  filter: drop-shadow(0 0 40px rgba(255, 106, 0, 0.6));
+}
+
+.create-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .create-content {
+    text-align: center;
+  }
+
+  .create-content h2 {
+    font-size: 30px;
+  }
+
+  .create-poll-image {
+    max-width: 260px;
+  }
+}
+
+
+
+/* =========================
+   CAREERS PAGE THEME
+========================= */
+
+.careers-page {
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+/* TOP TITLE */
+.careers-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.careers-title span {
+  color: #ff6a00;
+}
+
+/* LEFT CONTENT */
+.careers-subtitle {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.careers-text {
+  font-size: 18px;
+  color: #b3b3b3;
+  max-width: 520px;
+}
+
+/* IMAGE */
+.careers-image {
+  max-width: 420px;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(255, 106, 0, 0.25);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .careers-title {
+    font-size: 32px;
+  }
+
+  .careers-subtitle {
+    font-size: 26px;
+  }
+
+  .careers-text {
+    font-size: 16px;
+  }
+
+  .careers-image {
+    max-width: 280px;
+  }
 }

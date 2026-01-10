@@ -18,11 +18,32 @@ function Navbar() {
 
       <div className="collapse navbar-collapse" id="menu">
         <ul className="navbar-nav ms-auto gap-3">
-          <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-          <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
-          <li className="nav-item"><Link className="nav-link" to="/features">Features</Link></li>
-          <li className="nav-item"><Link className="nav-link" to="/team">Team</Link></li>
-          <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/careers">
+              Careers
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/team">
+              Team
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact">
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
