@@ -160,3 +160,232 @@ footer {
   color: #ff6a00;
 }
 
+/* =========================
+   ABOUT PAGE RESPONSIVE STYLES
+========================= */
+
+/* Base responsive adjustments for About page */
+@media (max-width: 1200px) {
+  .container .row .col-5 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container .row .col-5 p {
+    font-size: 1.8em !important;
+    margin-left: 20px !important;
+  }
+
+  .container .row .col-5 .btn-kalesh {
+    margin-left: 20px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Tablets */
+  .container .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container .row .col-5,
+  .container .row .col-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .container .row .col-5 img {
+    width: 100% !important;
+    max-width: 400px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .container .row .col-5 p {
+    font-size: 1.5em !important;
+    margin-top: 30px !important;
+    margin-left: 0 !important;
+  }
+
+  .container .row .col-5 .btn-kalesh {
+    margin-left: 0 !important;
+    display: block;
+    margin: 20px auto !important;
+  }
+
+  .container .row .col-6 p {
+    font-size: 1.2em !important;
+    padding: 20px !important;
+  }
+
+  /* Team section */
+  .container .row.mt-5 .col-5 img,
+  .container .row.mt-5 .col-6 img {
+    width: 100% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .container .row .col-5.mt-5 > div,
+  .container .row .col-6 > div {
+    margin-top: 20px !important;
+    margin-left: 0 !important;
+    padding: 20px;
+  }
+
+  .container h2 {
+    text-align: center;
+  }
+
+  .container p[style*="font-size:1.5em"] {
+    font-size: 1.2em !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile phones */
+  .container .row .col-5 p {
+    font-size: 1.3em !important;
+    margin-top: 20px !important;
+  }
+
+  .container .row .col-5 .btn-kalesh {
+    width: 180px;
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+
+  .container .row .col-6 p {
+    font-size: 1.1em !important;
+    padding: 15px !important;
+    line-height: 1.4;
+  }
+
+  .container .row.mt-5 .col-5 img,
+  .container .row.mt-5 .col-6 img {
+    max-width: 400px !important;
+  }
+
+  .container p[style*="font-size:1.5em"] {
+    font-size: 1.1em !important;
+    line-height: 1.4;
+  }
+
+  .container h2 {
+    font-size: 1.8em;
+  }
+
+  .container h1.text-center {
+    font-size: 2em;
+    padding: 20px !important;
+  }
+
+  .container .p-5 {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Small mobile phones */
+  .container .row .col-5 p {
+    font-size: 1.1em !important;
+  }
+
+  .container .row .col-5 .btn-kalesh {
+    width: 160px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .container .row .col-6 p {
+    font-size: 1em !important;
+    padding: 10px !important;
+  }
+
+  .container .row.mt-5 .col-5 img,
+  .container .row.mt-5 .col-6 img {
+    max-width: 300px !important;
+  }
+
+  .container p[style*="font-size:1.5em"] {
+    font-size: 1em !important;
+  }
+
+  .container h2 {
+    font-size: 1.6em;
+  }
+
+  .container h1.text-center {
+    font-size: 1.8em;
+    padding: 15px !important;
+  }
+
+  .container .mt-5 {
+    margin-top: 20px !important;
+  }
+
+  .container h5 {
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  .container h5 a {
+    display: inline-block;
+    margin-top: 5px;
+  }
+}
+
+/* Ensure images don't overflow */
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve button touch area on mobile */
+.container .btn-kalesh {
+  min-height: 44px;
+  padding: 12px 24px;
+}
+
+/* Fix horizontal scrolling issues */
+.container {
+  overflow-x: hidden;
+}
+
+/* Improve readability on mobile */
+.container p {
+  line-height: 1.5;
+}
+
+/* =========================
+   ABOUT PAGE IMAGE SIZES AND SPACING
+========================= */
+
+/* Standardize team member image sizes */
+.container .row .col-5 img[src*="assets"],
+.container .row .col-6 img[src*="assets"] {
+  width: 400px !important;
+  height: 300px !important;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Reduce spacing between images and text */
+.container .row .col-5.mt-5 > div {
+  margin-top: 20px !important;
+}
+
+.container .row .col-6 > div {
+  margin-top: 20px !important;
+}
+
+/* Adjust logo size if needed */
+.container .row .col-5 img.logo-glow {
+  width: 400px !important;
+  height: 400px !important;
+  object-fit: contain;
+}

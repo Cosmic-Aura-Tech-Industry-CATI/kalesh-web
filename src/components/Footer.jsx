@@ -5,7 +5,6 @@ function Footer() {
     <footer className="kalesh-footer">
       <div className="footer-links">
         <Link to="/careers">Careers</Link>
-        <Link to="/privacy">Privacy</Link>
       </div>
 
       <p>© 2026 Kalesh</p>
