@@ -57,7 +57,7 @@ function Footer() {
                 <Link to="/help">Help Center</Link>
               </li>
               <li>
-                <Link to="/security-advisory">Security Advisory</Link>
+                <Link to="/securityadvisory">Security Advisory</Link>
               </li>
             </ul>
           </div>

@@ -11,6 +11,7 @@ import Policy from "./pages/Policy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CommunnityGuidelines from "./pages/CommunityGuidelines";
+import SecurityAdvisory from "./pages/SecurityAdvisory";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/communityguidelines" element={<CommunnityGuidelines />} />
+          <Route path="/securityadvisory" element={<SecurityAdvisory />} />
         </Routes>
       </main>
 
