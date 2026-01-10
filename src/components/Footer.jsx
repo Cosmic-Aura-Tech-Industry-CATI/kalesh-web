@@ -25,7 +25,7 @@ function Footer() {
                 <Link to="/communityguidelines">Community Guidelines</Link>
               </li>
               <li>
-                <Link to="/promotion">For Paid Promotion</Link>
+                <Link to="/paid_promotions">Paid_Promotions</Link>
               </li>
             </ul>
           </div>
