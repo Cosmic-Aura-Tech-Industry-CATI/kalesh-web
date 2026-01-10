@@ -9,7 +9,6 @@ function Footer() {
           <div className="col-md-3 mb-4">
             <div className="footer-brand">
               <img src="/kalesh_navbar_logo.png" alt="Kalesh Logo" />
-              
             </div>
 
             <button className="coming-soon-btn">Coming Soon</button>
@@ -19,9 +18,15 @@ function Footer() {
           <div className="col-md-3 mb-4">
             <h5 className="footer-title">What We Do</h5>
             <ul className="footer-list">
-              <li>Features</li>
-              <li>Security</li>
-              <li>For Paid Promotion</li>
+              <li>
+                <Link to="/features">Features</Link>
+              </li>
+              <li>
+                <Link to="/security">Security</Link>
+              </li>
+              <li>
+                <Link to="/promotion">For Paid Promotion</Link>
+              </li>
             </ul>
           </div>
 
@@ -29,9 +34,15 @@ function Footer() {
           <div className="col-md-3 mb-4">
             <h5 className="footer-title">Who We Are</h5>
             <ul className="footer-list">
-              <li>About Us</li>
-              <li>Careers</li>
-              <li>Privacy</li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/careers">Careers</Link>
+              </li>
+              <li>
+                <Link to="/privacy">Privacy</Link>
+              </li>
             </ul>
           </div>
 
@@ -39,9 +50,15 @@ function Footer() {
           <div className="col-md-3 mb-4">
             <h5 className="footer-title">Need Help</h5>
             <ul className="footer-list">
-              <li>Contact Us</li>
-              <li>Help Center</li>
-              <li>Security Advisory</li>
+              <li>
+                <Link to="/contact">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/help">Help Center</Link>
+              </li>
+              <li>
+                <Link to="/security-advisory">Security Advisory</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -57,7 +74,9 @@ function Footer() {
 
               {/* COLUMN 2: TERMS & PRIVACY */}
               <div className="col-md-4 text-center mb-2 mb-md-0">
-                <a href="/privacy">Terms & Privacy Policy</a>
+                <Link to="/terms_conditions">Terms_Conditions</Link>
+                <span className="mx-2">|</span>
+                <Link to="/policy">Policy</Link>
               </div>
 
               {/* COLUMN 3: SOCIAL ICONS */}
