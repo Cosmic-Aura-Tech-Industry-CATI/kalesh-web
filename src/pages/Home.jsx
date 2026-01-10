@@ -70,8 +70,8 @@ function Home() {
           {/* LEFT IMAGE COLUMN */}
           <div className="col-md-6 text-center mb-4 mb-md-0">
             <img
-              src="/poll-mobile.png"
-              alt="Real-time Poll Preview"
+              src="/realtime_opinion_poll_on_kalesh.png"
+              alt="Real-time Poll on kalesh"
               className="poll-image"
             />
           </div>
@@ -110,8 +110,8 @@ function Home() {
           {/* RIGHT IMAGE COLUMN */}
           <div className="col-md-6 text-center">
             <img
-              src="/profile-mobile.png"
-              alt="Anonymous Profile Preview"
+              src="/kalesh_anonymous_Social_Profile.png"
+              alt="kalesh_anonymous_Social_Profile"
               className="profile-image"
             />
           </div>
@@ -125,8 +125,8 @@ function Home() {
           {/* LEFT IMAGE COLUMN */}
           <div className="col-md-6 text-center mb-4 mb-md-0">
             <img
-              src="/chat-mobile.png"
-              alt="Anonymous Chat Preview"
+              src="/end_to_end_encrypted_anonymous_individual_chat.png"
+              alt="end_to_end_encrypted_anonymous_individual_chat"
               className="chat-image"
             />
           </div>
@@ -155,8 +155,8 @@ function Home() {
           {/* RIGHT IMAGE COLUMN */}
           <div className="col-md-6 text-center">
             <img
-              src="/create-poll-mobile.png"
-              alt="Create Poll Preview"
+              src="/anonymous_opinion_poll_creation.png"
+              alt="anonymous_opinion_poll_creation"
               className="create-poll-image"
             />
           </div>
