@@ -574,3 +574,278 @@ a:hover {
     max-width: 280px;
   }
 }
+
+
+
+/* =========================
+   CAREER QUOTE SECTION
+========================= */
+
+.career-quote-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 70px;
+  border-radius: 40px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 15, 15, 0.95),
+    rgba(5, 5, 5, 0.98)
+  );
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 60px rgba(255, 106, 0, 0.25);
+  text-align: center;
+}
+
+/* QUOTE TEXT */
+.career-quote-text {
+  font-size: 26px;
+  line-height: 1.6;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* AUTHOR */
+.career-quote-author {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  color: #ff6a00;
+  font-weight: 600;
+}
+
+.career-quote-author i {
+  font-size: 22px;
+}
+
+/* QUOTE MARKS */
+.career-quote-mark {
+  position: absolute;
+  font-size: 90px;
+  font-weight: bold;
+  color: rgba(255, 106, 0, 0.9);
+}
+
+.career-quote-mark.top {
+  top: -35px;
+  left: 35px;
+}
+
+.career-quote-mark.bottom {
+  bottom: -50px;
+  right: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .career-quote-wrapper {
+    padding: 50px 25px;
+  }
+
+  .career-quote-text {
+    font-size: 18px;
+  }
+
+  .career-quote-author {
+    font-size: 16px;
+  }
+
+  .career-quote-mark {
+    font-size: 60px;
+  }
+}
+
+
+/* =========================
+   CAREER FORM SECTION
+========================= */
+
+.career-form-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: #0b0b0b;
+  border-radius: 30px;
+}
+
+.career-form-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.career-form-subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.career-form-text {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+/* FORM ROW */
+.career-form-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.career-form-row label {
+  width: 160px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* INPUT */
+.career-form-row input[type="text"],
+.career-form-row input[type="email"],
+.career-form-row input[type="tel"] {
+  width: 360px;
+  height: 48px;
+  border-radius: 14px;
+  border: 2px solid #ff4d00;
+  background: #111;
+  color: #fff;
+  padding: 0 15px;
+  box-shadow: 0 0 15px rgba(255, 77, 0, 0.6);
+}
+
+/* RESUME INPUT */
+.resume-input {
+  position: relative;
+  border-radius: 14px;
+  border: 2px solid #ff4d00;
+}
+
+.resume-input input[type="file"] {
+  width: 360px;
+  height: 48px;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.resume-input i {
+  position: absolute;
+  right: 30px;
+  top: 52%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #ff6a00;
+  z-index: 1;
+}
+
+/* APPLY BUTTON */
+.career-apply-btn {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #2a7cff, #3aa0ff);
+  color: #fff;
+  border: none;
+  padding: 14px 50px;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 40px;
+  box-shadow: 0 0 25px rgba(58, 160, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.career-apply-btn:hover {
+  transform: scale(1.05);
+}
+
+/* WARNING */
+.career-warning {
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .career-form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .career-form-row label {
+    text-align: center;
+    width: 100%;
+  }
+
+  .career-form-row input,
+  .resume-input input[type="file"] {
+    width: 100%;
+  }
+}
+
+
+
+/* =========================
+   SOCIAL FOLLOW SECTION
+========================= */
+
+.social-follow-section {
+  background-color: #0b0b0b;
+  padding: 80px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.social-label {
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+}
+
+.social-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ICONS */
+.social-icons a {
+  font-size: 42px;
+  margin-left: 40px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-6px) scale(1.1);
+}
+
+/* BRAND COLORS ON HOVER */
+.social-icons a:nth-child(1):hover { color: #eb6c6c; }      /* X */
+.social-icons a:nth-child(2):hover { color: #1877f2; }      /* Facebook */
+.social-icons a:nth-child(3):hover { color: #e1306c; }      /* Instagram */
+.social-icons a:nth-child(4):hover { color: #ff0000; }      /* YouTube */
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .social-heading {
+    font-size: 28px;
+  }
+
+  .social-icons {
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin: 0 15px;
+    font-size: 36px;
+  }
+}
+
+
+
