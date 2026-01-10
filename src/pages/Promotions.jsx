@@ -1,4 +1,4 @@
-function Contact() {
+function Promotions() {
   return (
     <div className="container-fluid py-5 px-5 section-dark">
       <h2 className="mb-4">Contact Us</h2>
@@ -17,4 +17,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Promotions;

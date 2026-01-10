@@ -1,4 +1,4 @@
-function Team() {
+function Privacy() {
   return (
     <div className="container-fluid py-5 px-5">
       <h2 className="mb-4">Kalesh Team</h2>
@@ -18,4 +18,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default Privacy;

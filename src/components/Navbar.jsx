@@ -35,13 +35,13 @@ function Navbar() {
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/team">
-              Team
+            <Link className="nav-link" to="/privacy">
+              Privacy
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/contact">
-              Contact
+            <Link className="nav-link" to="/promotions">
+              Promotions
             </Link>
           </li>
         </ul>
