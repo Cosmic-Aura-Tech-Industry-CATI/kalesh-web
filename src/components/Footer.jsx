@@ -22,7 +22,7 @@ function Footer() {
                 <Link to="/features">Features</Link>
               </li>
               <li>
-                <Link to="/security">Security</Link>
+                <Link to="/communityguidelines">Community Guidelines</Link>
               </li>
               <li>
                 <Link to="/promotion">For Paid Promotion</Link>
@@ -41,7 +41,7 @@ function Footer() {
                 <Link to="/careers">Careers</Link>
               </li>
               <li>
-                <Link to="/privacy">Privacy</Link>
+                <Link to="/privacypolicy">Privacy Policy</Link>
               </li>
             </ul>
           </div>
@@ -74,9 +74,8 @@ function Footer() {
 
               {/* COLUMN 2: TERMS & PRIVACY */}
               <div className="col-md-4 text-center mb-2 mb-md-0">
-                <Link to="/terms_conditions">Terms_Conditions</Link>
-                <span className="mx-2">|</span>
-                <Link to="/policy">Policy</Link>
+                <Link to="/termsandconditions">Terms & Conditions</Link>
+                
               </div>
 
               {/* COLUMN 3: SOCIAL ICONS */}
