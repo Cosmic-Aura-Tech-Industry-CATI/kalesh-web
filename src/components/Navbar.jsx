@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <Link className="navbar-brand d-flex align-items-center" to="/">
-        <img src="/logo.png" alt="logo" height="30" className="me-2" />
-        Kalesh
+      <Link className="navbar-brand d-flex align-items-center mx-4" to="/">
+        <img src="/kalesh_navbar_logo.png" alt="logo" height="45" className="me-2" />
+        
       </Link>
 
       <button
@@ -17,7 +17,7 @@ function Navbar() {
       </button>
 
       <div className="collapse navbar-collapse" id="menu">
-        <ul className="navbar-nav ms-auto gap-3">
+        <ul className="navbar-nav ms-auto gap-1 mx-4">
           <li className="nav-item">
             <Link className="nav-link" to="/">
               Home

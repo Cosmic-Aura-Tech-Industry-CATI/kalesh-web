@@ -8,8 +8,8 @@ function Footer() {
           {/* COLUMN 1 : LOGO + BRAND */}
           <div className="col-md-3 mb-4">
             <div className="footer-brand">
-              <img src="/logo.png" alt="Kalesh Logo" />
-              <h3>Kalesh</h3>
+              <img src="/kalesh_navbar_logo.png" alt="Kalesh Logo" />
+              
             </div>
 
             <button className="coming-soon-btn">Coming Soon</button>
@@ -61,7 +61,7 @@ function Footer() {
               </div>
 
               {/* COLUMN 3: SOCIAL ICONS */}
-              <div className="col-md-4 text-center text-md-end footer-socials">
+              <div className="col-md-4 text-center text-md-end footer-socials ">
                 <a href="#">
                   <i className="fa-brands fa-x-twitter"></i>
                 </a>
