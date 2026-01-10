@@ -2,16 +2,6 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-      <div className="container-fluid px-5 py-5">
-        <div className="row">
-          {/* COLUMN 1 : LOGO + BRAND */}
-          <div className="col-md-3 mb-4">
-            <div className="footer-brand">
-              <img src="/logo.png" alt="Kalesh Logo" />
-              <h3>Kalesh</h3>
-            </div>
->>>>>>> 65f3c3a818d15798ec5d4a7c1b793983046f28ff
-=======
     <footer className="kalesh-footer">
       <div className="container-fluid px-5 py-5">
         <div className="row">
@@ -21,16 +11,6 @@ function Footer() {
               <img src="/logo.png" alt="Kalesh Logo" />
               <h3>Kalesh</h3>
             </div>
-=======
-      <div className="container-fluid px-5 py-5">
-        <div className="row">
-          {/* COLUMN 1 : LOGO + BRAND */}
-          <div className="col-md-3 mb-4">
-            <div className="footer-brand">
-              <img src="/logo.png" alt="Kalesh Logo" />
-              <h3>Kalesh</h3>
-            </div>
->>>>>>> 65f3c3a818d15798ec5d4a7c1b793983046f28ff
 
             <button className="coming-soon-btn">Coming Soon</button>
           </div>
