@@ -1,18 +1,169 @@
+import { useState } from "react";
+
 function Promotions() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+
+  // HANDLE CHANGE
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // VALIDATION
+  const validate = () => {
+    const newErrors = {};
+
+    if (!form.name.trim()) newErrors.name = "Name is required";
+    if (!form.email.match(/^\S+@\S+\.\S+$/))
+      newErrors.email = "Valid email required";
+    if (!form.phone.match(/^[0-9]{10}$/))
+      newErrors.phone = "Enter 10-digit phone number";
+    if (!form.message.trim()) newErrors.message = "Message cannot be empty";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // SUBMIT (BACKEND CONNECT)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setLoading(true);
+    setSuccess("");
+
+    try {
+      // 🔗 BACKEND API (change URL)
+      const res = await fetch("https://your-backend-api.com/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      setSuccess("✅ Message sent successfully!");
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setSuccess("❌ Something went wrong. Try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <div className="container-fluid py-5 px-5 section-dark">
-      <h2 className="mb-4">Contact Us</h2>
+    <div className="promo-page">
+      {/* IMAGE + TEXT */}
+      <div className="promo-info-container">
+        <div className="promo-row">
+          <div className="promo-image-col">
+            <img
+              src="/promotion-image.png"
+              alt="How can we help you"
+              className="promo-image"
+            />
+          </div>
 
-      <p className="text-muted">
-        Agar tumhare paas koi question, suggestion ya feedback ho, to humse
-        connect karo.
-      </p>
+          <div className="promo-text-col">
+            <h2 className="promo-title">Let’s Collaborate</h2>
+            <p className="promo-para">
+              Connect with Kalesh for influencer and brand collaborations,
+              partnerships, or support. Reach out via our contact form or choose
+              a topic below so we can best support your growth and success with
+              us.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <ul>
-        <li>📧 Email: support@tumharekalesh.app</li>
-        <li>🌐 Website: www.kalesh.app</li>
-        <li>📍 Location: India</li>
-      </ul>
+      {/* For collaborations and promotions */}
+
+      {/* BETWEEN TEXT */}
+      <div className="promo-between-text container text-center ">
+        <h2 className="promo-between-title fs-1 fw-bold">
+          For collaboration and promotion.
+        </h2>
+      </div>
+
+      {/* FORM */}
+      <div className="promo-form-container gold-theme">
+        <div className="promo-between-text container text-center ">
+          <h2 className="promo-between-title fs-1 fw-bold">Contact Us.</h2>
+        </div>
+        <form className="promo-form gold-form" onSubmit={handleSubmit}>
+          {/* NAME */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">👤</span> NAME
+            </label>
+            <input
+              name="name"
+              placeholder="Enter your full name"
+              value={form.name}
+              onChange={handleChange}
+            />
+            {errors.name && <small>{errors.name}</small>}
+          </div>
+
+          {/* EMAIL */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">📧</span> E-MAIL ID
+            </label>
+            <input
+              name="email"
+              placeholder="Enter your email address"
+              value={form.email}
+              onChange={handleChange}
+            />
+            {errors.email && <small>{errors.email}</small>}
+          </div>
+
+          {/* PHONE */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">📞</span> PHONE NO
+            </label>
+            <input
+              name="phone"
+              placeholder="Enter your phone number"
+              value={form.phone}
+              onChange={handleChange}
+            />
+            {errors.phone && <small>{errors.phone}</small>}
+          </div>
+
+          {/* MESSAGE */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">💬</span> MESSAGE
+            </label>
+            <textarea
+              name="message"
+              placeholder="Write your message"
+              value={form.message}
+              onChange={handleChange}
+            />
+            {errors.message && <small>{errors.message}</small>}
+          </div>
+
+          {/* BUTTON */}
+          <button className="gold-button" disabled={loading}>
+            {loading ? "Sending..." : "SEND MESSAGE →"}
+          </button>
+
+          {success && <p className="status">{success}</p>}
+        </form>
+      </div>
     </div>
   );
 }
