@@ -1,254 +1,443 @@
-import shikhar from "../assets/shikhar.png";
-import swat from "../assets/swat.png";
-import nish from "../assets/nish.png";
-import sheelu from "../assets/sheelu.png";
-import mridul from "../assets/mridul.png";
-import sid from "../assets/sid.png";
+import { useState, useEffect } from 'react';
+import shikhar from "../assets/Shikhar_Dixit.png";
+import swat from "../assets/Swatantra_Singh.png";
+import nish from "../assets/Nishkarsh_Mishra.png";
+import sheelu from "../assets/Sheelu_Singh.png";
+import mridul from "../assets/Mridul_Mishra.png";
+import sid from "../assets/Siddhant_Shekhar.png";
+import './about.css';
+
 function About() {
+  const [activeSection, setActiveSection] = useState('hero');
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  // Target date: March 16, 2026
+  const targetDate = new Date('March 16, 2026 00:00:00').getTime();
+
+  useEffect(() => {
+    // Countdown timer logic
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        return { days, hours, minutes, seconds };
+      }
+
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    };
+
+    // Initialize timer
+    setTimeLeft(calculateTimeLeft());
+
+    // Update timer every second
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  // Format numbers to always show 2 digits
+  const formatNumber = (num) => {
+    return num < 10 ? `0${num}` : num;
+  };
+
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Shikhar Dixit",
+      role: "CEO",
+      description: "Shikhar Dixit is the CEO of Kalesh, responsible for setting the company's vision and strategy. He leads product direction, business growth, and investor relations, ensuring Kalesh remains a safe, anonymous platform for real-time and honest Gen-Z expression.",
+      linkedin: "https://www.linkedin.com/in/shikhar040/",
+      image: shikhar,
+    },
+    {
+      id: 2,
+      name: "Swatantra Singh",
+      role: "CFO",
+      description: "Swatantra Singh serves as the CFO of Kalesh, managing the company's financial strategy and sustainability. She oversees budgeting, revenue planning, unit economics, and investor financials, ensuring disciplined growth and strong profitability as Kalesh scales.",
+      linkedin: "https://www.linkedin.com/in/swatantra-singh308/",
+      image: swat,
+    },
+    {
+      id: 3,
+      name: "Nishkarsh Mishra",
+      role: "COO",
+      description: "Nishkarsh Mishra is the COO of Kalesh, responsible for overseeing day-to-day operations and execution. He manages product rollout, team coordination, and go-to-market execution, ensuring smooth operations and scalable growth across campuses and partnerships.",
+      linkedin: "https://www.linkedin.com/in/0nishkarshm/",
+      image: nish,
+    },
+    {
+      id: 4,
+      name: "Sheelu Singh",
+      role: "Android Developer",
+      description: "Sheelu Singh is the Android Developer of the Kalesh app, responsible for building, optimizing, and maintaining the Android application to ensure a smooth, secure, and high-performance user experience.",
+      linkedin: "https://www.linkedin.com/in/sheelu-singh-bbb788307/",
+      image: sheelu,
+    },
+    {
+      id: 5,
+      name: "Mridul Mishra",
+      role: "Backend Developer",
+      description: "Mridul Mishra is the Backend Developer at Kalesh, responsible for designing and maintaining server-side systems, databases, and APIs to ensure secure, scalable, and reliable app performance.",
+      linkedin: "https://www.linkedin.com/in/mridul-mishra-4717b828b/",
+      image: mridul,
+    },
+    {
+      id: 6,
+      name: "Siddhant Shekhar",
+      role: "Web Developer",
+      description: "Siddhant Shekhar is the Web Developer at Kalesh, responsible for developing and maintaining the web platforms, including the admin panel and support interfaces, ensuring smooth functionality and seamless user experience.",
+      linkedin: "https://www.linkedin.com/in/shekhar18/",
+      image: sid,
+    }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['hero', 'about', 'team'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleNotifyClick = () => {
+    alert('Thank you! We will notify you when Kalesh launches on March 16, 2026!');
+  };
+
+  const handleCTAClick = () => {
+    window.location.href = '/careers';
+  };
+
   return (
-    <div className="container">
-      <div className="row">
-      
-      <div className="col-5 mt-5 p-5" >
-        <img className="logo-glow" src="/logo.png" width="470px" height="540px" alt="Kalesh logo loading..." />
+    <div className="about-page-wrapper">
+      {/* Animated Background Particles */}
+      <div className="animated-particles">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i}
+            className="particle"
+            style={{
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 20}s`,
+              animationDuration: `${Math.random() * 30 + 20}s`,
+              background: i % 3 === 0 ? '#ff6a00' : i % 3 === 1 ? '#ffd700' : '#00ffcc'
+            }}
+          />
+        ))}
       </div>
 
-      <div className="col-2">
+      {/* Floating Orbs */}
+      <div className="floating-orb orb-1"></div>
+      <div className="floating-orb orb-2"></div>
+      <div className="floating-orb orb-3"></div>
 
-      </div>
-      
-      <div className="col-5 mt-5 ">
-        <p className="" style={{fontSize : "2.2em", marginTop:"200px", marginLeft:"50px"}}>A Plateform Where Your Opinion Matters Not Your
-                Identities</p>
-        <button className="btn-kalesh me-3" style={{marginLeft:"50px"}}>
-            App Coming Soon
+      {/* Animated Grid Background */}
+      <div className="hero-bg-grid"></div>
+
+      {/* Navigation Dots */}
+      <div className="nav-dots">
+        {['hero', 'about', 'team'].map((section) => (
+          <button
+            key={section}
+            className={`nav-dot ${activeSection === section ? 'active' : ''}`}
+            onClick={() => scrollToSection(section)}
+            aria-label={`Go to ${section} section`}
+          >
+            <div className="dot-inner"></div>
           </button>
-      </div>
-      </div>
-
-      <div className="row">
-        <h1 className="text-center p-5">About Our Kalesh</h1>
-        <div className="col-6">
-          <p className="p-5 mt-1" style={{fontSize:"1.5em", textAlign:"justify"}}>In today’s digital ecosystem, most social
-            media platforms are identity-driven and
-            centered around public profiles, likes, and
-            followers, which creates social pressure
-            and discourages honest expression. Users
-            often hesitate to share their real opinions
-            due to fear of judgment, online backlash,
-            screenshots, and long-term reputational
-            impact. This environment particularly
-            affects Gen-Z users, students, and
-            introverts, who lack a safe and comfortable
-            space to express themselves freely.
-            Additionally, existing platforms prioritize
-            reach based on popularity rather than
-            content relevance, making it difficult for
-            new users to be heard and preventing
-            brands and institutions from receiving
-            instant, unbiased audience feedback.</p>
-        </div>
-
-
-        <div className="col-6">
-          <p className="p-5 mt-1" style={{fontSize:"1.5em", textAlign:"justify"}}>
-            Kalesh solves this problem by offering a
-            fully anonymous, real-time opinion and
-            polling platform that removes identity
-            pressure 
-            and 
-            promotes 
-            authentic
-            participation. Users can create live polls,
-            vote instantly, and engage in discussions
-            without revealing their identity, ensuring
-            opinions are judged by content rather than
-            personal 
-            branding. 
-            The 
-            real-time
-            engagement model allows users to
-            participate immediately after joining, while
-            colleges, brands, and creators gain access
-            to honest and unbiased feedback. With
-            strong moderation and safety controls,
-            Kalesh provides a secure, judgment-free
-            environment 
-            that 
-            enables 
-            genuine
-            expression and meaningful engagement.
-          </p>
-        </div>
+        ))}
       </div>
 
-      <div className="row">
-        <h1 className="text-center p-5">Team Behind Kalesh</h1>
-        <div className="col-5 mt-3">
-          <img src={shikhar} alt="Loading Failed..." width="730px" height="450px" style={{marginLeft:"-3.5em"}} />
-        </div>
+      {/* ================= HERO SECTION ================= */}
+      <section id="hero" className="hero-section">
+        <div className="container">
+          <div className="hero-content-wrapper">
+            <div className="hero-grid">
+              {/* Left - Logo and Slogan */}
+              <div className="hero-left">
+                <div className="logo-container">
+                  <div className="logo-3d-wrapper">
+                    <img 
+                      src="/logo.png" 
+                      alt="Kalesh Logo" 
+                      className="hero-logo"
+                    />
+                    <div className="logo-hologram"></div>
+                  </div>
+                </div>
+                
+                <div className="hero-slogan">
+                  <h1 className="kalesh-text">
+                    <span className="k-letter">K</span>
+                    <span className="alesh-text">ALESH</span>
+                  </h1>
+                  <p className="tagline">
+                    A Platform Where Your Opinion Matters<br />
+                    <span className="highlight">Not Your Identity</span>
+                  </p>
+                </div>
+              </div>
 
-        <div className="col-1">
-
-        </div>
-
-        <div className="col-5 mt-5" >
-          <div style={{marginTop:"40px"}}>
-            <h2>Shikhar Dixit</h2>
-          <p style={{fontSize:"1.5em", textAlign:"justify"}}>Shikhar Dixit is the CEO of Kalesh,
-            responsible for setting the company’s
-            vision and strategy. He leads product
-            direction, business growth, and investor
-            relations, ensuring Kalesh remains a safe,
-            anonymous platform for real-time and
-            honest Gen-Z expression.</p>
-
-          <h5>Connect Him on <a href="https://www.linkedin.com/in/shikhar040/" target="_blank">Linkedin</a></h5>
+              {/* Right - Coming Soon Button */}
+              <div className="hero-right">
+                <div className="coming-soon-card">
+                  <div className="coming-soon-badge" style={{marginBottom: '60px'}}>
+                    <span className="badge-text">COMING SOON</span>
+                    <div className="badge-glow"></div>
+                  </div>
+                  <div className="coming-soon-content">
+                    <h3>Get Ready for <span className="kalesh-gradient">Kalesh</span></h3>
+                    <p>India's first anonymous social media platform is launching on March 16, 2026</p>
+                    <button className="notify-btn" onClick={handleNotifyClick}>
+                      <span className="btn-text">Notify Me</span>
+                      <span className="btn-icon">→</span>
+                    </button>
+                  </div>
+                  
+                  {/* Countdown Timer */}
+                  <div className="countdown-timer">
+                    <div className="timer-glow"></div>
+                    <div className="timer-grid">
+                      {/* Days */}
+                      <div className="timer-item">
+                        <span className="timer-value">{formatNumber(timeLeft.days)}</span>
+                        <span className="timer-label">Days</span>
+                      </div>
+                      
+                      {/* Separator */}
+                      <div className="timer-separator">:</div>
+                      
+                      {/* Hours */}
+                      <div className="timer-item">
+                        <span className="timer-value">{formatNumber(timeLeft.hours)}</span>
+                        <span className="timer-label">Hours</span>
+                      </div>
+                      
+                      {/* Separator */}
+                      <div className="timer-separator">:</div>
+                      
+                      {/* Minutes */}
+                      <div className="timer-item">
+                        <span className="timer-value">{formatNumber(timeLeft.minutes)}</span>
+                        <span className="timer-label">Minutes</span>
+                      </div>
+                      
+                    
+                     
+                    </div>
+                    
+                    {/* Launch Date Info */}
+                    <div className="launch-date-info">
+                      <p className="launch-date">Launch Date: <span className="date-highlight">March 16, 2026</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="col-1">
+      {/* ================= ABOUT SECTION ================= */}
+      <section id="about" className="about-section">
+        <div className="container">
+          {/* Section Header */}
+          <div className="section-header">
+            <div className="section-title-wrapper">
+              <h2 className="section-title">About</h2>
+              <div className="title-underline">
+                <div className="underline-line"></div>
+                <div className="underline-dot"></div>
+              </div>
+            </div>
+          </div>
 
-        </div>
-      </div>
+          {/* Content Grid */}
+          <div className="about-content-grid">
+            {/* Left Column */}
+            <div className="about-column">
+              <div className="about-card futuristic-card">
+                <div className="card-header">
+                  <div className="card-icon">
+                    <i className="fas fa-users"></i>
+                  </div>
+                  <h3>The Problem</h3>
+                </div>
+                <div className="card-content">
+                  <p>
+                    In today's digital ecosystem, most social media platforms are identity-driven and centered around public profiles, likes, and followers, which creates social pressure and discourages honest expression. Users often hesitate to share their real opinions due to fear of judgment, online backlash, screenshots, and long-term reputational impact.
+                  </p>
+                  <p>
+                    This environment particularly affects Gen-Z users, students, and introverts, who lack a safe and comfortable space to express themselves freely. Additionally, existing platforms prioritize reach based on popularity rather than content relevance, making it difficult for new users to be heard and preventing brands and institutions from receiving instant, unbiased audience feedback.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-      <div className="row mt-5" >
-        <div className="col-6">
-          <div className="" style={{marginLeft:"55px", marginTop:"70px"}}>
-            <h2>Swatantra Singh</h2>
-          <p style={{fontSize:"1.5em", textAlign:"justify"}}>Swatantra Singh serves as the CFO of
-              Kalesh, managing the company’s financial
-              strategy and sustainability. He oversees
-              budgeting, 
-              revenue 
-              planning, 
-              unit
-              economics, and investor financials,
-              ensuring disciplined growth and strong
-              profitability as Kalesh scales.</p>
-              <h5>Connect Him on <a href="https://www.linkedin.com/in/swatantra-singh308/" target="_blank">LinkedIn</a></h5>
+            {/* Right Column */}
+            <div className="about-column">
+              <div className="about-card futuristic-card">
+                <div className="card-header">
+                  <div className="card-icon">
+                    <i className="fas fa-bullseye"></i>
+                  </div>
+                  <h3>The Solution</h3>
+                </div>
+                <div className="card-content">
+                  <p>
+                    Kalesh solves this problem by offering a fully anonymous, real-time opinion and polling platform that removes identity pressure and promotes authentic participation. Users can create live polls, vote instantly, and engage in discussions without revealing their identity, ensuring opinions are judged by content rather than personal branding.
+                  </p>
+                  <p>
+                    The real-time engagement model allows users to participate immediately after joining, while colleges, brands, and creators gain access to honest and unbiased feedback. With strong moderation and safety controls, Kalesh provides a secure, judgment-free environment that enables genuine expression and meaningful engagement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="stats-section">
+            <div className="stats-grid">
+              <div className="stat-item">
+                <div className="stat-value">100%</div>
+                <div className="stat-label">Anonymous</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-value">Real-time</div>
+                <div className="stat-label">Polling</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-value">Zero</div>
+                <div className="stat-label">Judgment</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-value">Safe</div>
+                <div className="stat-label">Space</div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="col-5">
-          <img src={swat} alt="Loading Failed..." width="730px" height="450px" style={{marginLeft:"-25px"}} />
-        </div>
+      {/* ================= TEAM SECTION ================= */}
+      <section id="team" className="team-section">
+        <div className="container">
+          {/* Section Header */}
+          <div className="section-header">
+            <div className="section-title-wrapper">
+              <h2 className="section-title">Our Super Team</h2>
+              <div className="title-underline">
+                <div className="underline-line"></div>
+                <div className="underline-dot"></div>
+              </div>
+            </div>
+            <p className="section-subtitle">
+              The brilliant minds behind Kalesh's revolutionary platform
+            </p>
+          </div>
 
-        <div className="col-1">
+          {/* Team Grid */}
+          <div className="team-grid">
+            {teamMembers.map((member) => (
+              <div key={member.id} className="team-member-card">
+                {/* Card Inner Glow */}
+                <div className="card-inner-glow"></div>
+                
+                {/* Floating Elements */}
+                <div className="card-floating-element floating-1"></div>
+                <div className="card-floating-element floating-2"></div>
+                <div className="card-floating-element floating-3"></div>
+                <div className="card-floating-element floating-4"></div>
+                
+                {/* Member Image */}
+                <div className="member-image-container">
+                  <div className="image-hologram-frame">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="member-image"
+                    />
+                    <div className="image-hologram-overlay"></div>
+                  </div>
+                  <div className="image-particle-effect"></div>
+                </div>
 
-        </div>
-      </div>
+                {/* Member Info */}
+                <div className="member-info">
+                  <h3 className="member-name">{member.name}</h3>
+                  <div className="member-role">
+                    <span className="role-neon-badge">{member.role}</span>
+                  </div>
+                  <p className="member-description">{member.description}</p>
+                </div>
 
-      <div className="row">
-        <div className="col-5 mt-3">
-          <img src={nish} alt="Loading Failed..." width="730px" height="450px" style={{marginLeft:"-3.5em"}} />
-        </div>
+                {/* LinkedIn Button */}
+                <div className="member-connect">
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="neon-linkedin-btn"
+                  >
+                    <div className="linkedin-icon">
+                      <i className="fab fa-linkedin-in"></i>
+                    </div>
+                    <span className="connect-text">Connect on LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
 
-        <div className="col-1">
-
-        </div>
-
-        <div className="col-5 mt-5" >
-          <div style={{marginTop:"40px"}}>
-            <h2>Nishkarsh Mishra</h2>
-          <p style={{fontSize:"1.5em", textAlign:"justify"}}>Nishkarsh Mishra is the COO of Kalesh,
-              responsible for overseeing day-to-day
-              operations and execution. He manages
-              product rollout, team coordination, and
-              go-to-market execution, ensuring smooth
-              operations and scalable growth across
-              campuses and partnerships.</p>
-
-          <h5>Connect Him on <a href="https://www.linkedin.com/in/0nishkarshm/" target="_blank">Linkedin</a></h5>
+          {/* Team Call to Action */}
+          <div className="team-cta">
+            <div className="cta-hologram-card">
+              <h3>Join Our Mission</h3>
+              <p>Be part of the revolution in social media</p>
+              <button className="hologram-cta-btn" onClick={handleCTAClick}>
+                <span>View Careers</span>
+                <i className="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
         </div>
-
-        <div className="col-1">
-
-        </div>
-      </div>
-
-      <div className="row mt-5" >
-        <div className="col-6">
-          <div className="" style={{marginLeft:"55px", marginTop:"70px"}}>
-            <h2>Sheelu Singh</h2>
-          <p style={{fontSize:"1.5em", textAlign:"justify"}}>Sheelu Singh is the Android Developer
-              of the Kalesh app, responsible for
-              building, optimizing, and maintaining
-              the Android application to ensure a
-              smooth, secure, and high-performance
-              user experience.</p>
-              <h5>Connect Him on <a href="https://www.linkedin.com/in/sheelu-singh-bbb788307/" target="_blank">LinkedIn</a></h5>
-          </div>
-        </div>
-
-        <div className="col-5">
-          <img src={sheelu} alt="Loading Failed..." width="730px" height="450px" style={{marginLeft:"-25px"}} />
-        </div>
-
-        <div className="col-1">
-
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-5 mt-3">
-          <img src={mridul} alt="Loading Failed..." width="730px" height="450px" style={{marginLeft:"-3.5em"}} />
-        </div>
-
-        <div className="col-1">
-
-        </div>
-
-        <div className="col-5 mt-5" >
-          <div style={{marginTop:"40px"}}>
-            <h2>Mridul Mishra</h2>
-          <p style={{fontSize:"1.5em", textAlign:"justify"}}>Mridul Mishra is the Backend
-            Developer at Kalesh, responsible for
-            designing and maintaining server
-            side systems, databases, and APIs to
-            ensure secure, scalable, and reliable
-            app performance.</p>
-
-          <h5>Connect Him on <a href="https://www.linkedin.com/in/mridul-mishra-4717b828b/" target="_blank">Linkedin</a></h5>
-          </div>
-        </div>
-
-        <div className="col-1">
-
-        </div>
-      </div>
-
-      <div className="row mt-5" >
-        <div className="col-6">
-          <div className="" style={{marginLeft:"55px", marginTop:"70px"}}>
-            <h2>Siddhant Shekhar</h2>
-          <p style={{fontSize:"1.5em", textAlign:"justify"}}>Siddhant Shekhar is the Web Developer
-                at Kalesh, responsible for developing
-                and maintaining the web platforms,
-                including the admin panel and support
-                interfaces, 
-                ensuring 
-                functionality 
-                smooth
-                and seamless user
-                experience.</p>
-              <h5>Connect Him on <a href="https://www.linkedin.com/in/shekhar18/" target="_blank">LinkedIn</a></h5>
-          </div>
-        </div>
-
-        <div className="col-5">
-          <img src={sid} alt="Loading Failed..." width="730px" height="450px" style={{marginLeft:"-25px"}} />
-        </div>
-
-        <div className="col-1">
-
-        </div>
-      </div>
-
-      
+      </section>
     </div>
-
   );
 }
 

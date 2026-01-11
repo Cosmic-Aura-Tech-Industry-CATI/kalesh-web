@@ -283,6 +283,7 @@ a:hover {
   max-width: 420px;
 }
 
+
 /* =========================
    HERO BUTTON GROUP
 ========================= */
@@ -1215,5 +1216,37 @@ a:hover {
   .form-decoration-top,
   .form-decoration-bottom {
     width: 100px;
+  }
+}
+
+
+/* Animated Gradient Hero Title */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(
+    90deg,
+    #ff6a00,
+    #ff8c00,
+    #ffd700,
+    #ff8c00,
+    #ff6a00
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: gradientFlow 8s ease infinite;
+  letter-spacing: -0.5px;
+}
+
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
