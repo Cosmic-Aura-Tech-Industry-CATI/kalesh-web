@@ -9,7 +9,7 @@ function Promotions() {
       </p>
 
       <ul>
-        <li>📧 Email: support@kalesh.app</li>
+        <li>📧 Email: support@tumharekalesh.app</li>
         <li>🌐 Website: www.kalesh.app</li>
         <li>📍 Location: India</li>
       </ul>
