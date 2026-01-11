@@ -141,6 +141,11 @@ a:hover {
   box-shadow: 0 0 25px rgba(255, 106, 0, 0.6);
 }
 
+.coming-soon-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(255, 106, 0, 1);
+}
+
 /* TITLES */
 .footer-title {
   font-weight: 700;
@@ -210,9 +215,16 @@ a:hover {
 }
 
 .footer-socials a:hover {
-  color: #ff6a00;
-  transform: scale(1.2);
+  transform: translateY(-6px) scale(1.1);
 }
+
+/* BRAND COLORS ON HOVER */
+.footer-socials a:nth-child(1):hover { color: #eb6c6c; }      /* X */
+.footer-socials a:nth-child(2):hover { color: #1877f2; }      /* Facebook */
+.footer-socials a:nth-child(3):hover { color: #e1306c; }      /* Instagram */
+.footer-socials a:nth-child(4):hover { color: #ff0000; }      /* YouTube */
+
+
 
 /* =========================
    MOBILE FOOTER FIX

@@ -12,12 +12,12 @@ function Careers() {
       <div className="container py-5">
         <div className="row align-items-center">
           {/* LEFT CONTENT */}
-          <div className="col-md-6 mb-4 mb-md-0">
-            <h2 className="careers-subtitle">Purposeful</h2>
-            <p className="careers-text mb-5">
+          <div className="col-md-6 mb-4 ">
+            <h2 className="careers-subtitle ">Purposeful</h2>
+            <p className="careers-text mb-5 fs-5 ">
               Evolving Our Purpose: We continuously refine our mission to
               empower an enlightened workforce, engage conscious customers, and
-              build a stronger, more connected community
+              build a stronger, more connected community.
             </p>
           </div>
 
