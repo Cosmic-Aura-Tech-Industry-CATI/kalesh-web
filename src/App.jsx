@@ -5,11 +5,13 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
-import Paid_Promotions from "./pages/Paid_Promotions";
+import Promotions from "./pages/Promotions";
+import PaidPromotions from "./pages/PaidPromotions";
 import Careers from "./pages/Careers";
 import Features from "./pages/Features";
+import ContactUs from "./pages/ContactUs";
+import HelpCenter from "./pages/HelpCenter";
 
-import Policy from "./pages/Policy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CommunnityGuidelines from "./pages/CommunityGuidelines";
@@ -28,15 +30,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/paid_promotions" element={<Paid_Promotions />} />
+          <Route path="/promotions" element={<Promotions />} />
+          <Route path="/paidpromotions" element={<PaidPromotions />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/policy" element={<Policy />} />
-
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/communityguidelines" element={<CommunnityGuidelines />} />
           <Route path="/securityadvisory" element={<SecurityAdvisory />} />
-
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/helpcenter" element={<HelpCenter />} />
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/features" element={<Features />} />
         </Routes>

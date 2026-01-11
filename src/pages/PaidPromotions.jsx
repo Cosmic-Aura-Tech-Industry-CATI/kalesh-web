@@ -1,4 +1,4 @@
-function Paid_Promotions() {
+function PaidPromotions() {
   return (
     <div className="container-fluid py-5 px-5 section-dark">
       <h2 className="mb-4">Contact Us</h2>
@@ -17,4 +17,4 @@ function Paid_Promotions() {
   );
 }
 
-export default Paid_Promotions;
+export default PaidPromotions;
