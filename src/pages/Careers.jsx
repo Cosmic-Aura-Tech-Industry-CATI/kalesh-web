@@ -73,10 +73,7 @@ function Careers() {
       {/* TOP HEADING */}
       <div className="container text-center py-5">
         <h1 className="careers-title">
-          Build the future at the heart of change at{" "}
-          <h1>
-            <span>Kalesh.</span>
-          </h1>
+          Build the future at the heart of change at <br /> Kalesh.{" "}
         </h1>
       </div>
 
