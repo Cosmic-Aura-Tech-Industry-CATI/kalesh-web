@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { Collapse } from "bootstrap";
 
 function Navbar() {
+  const menuRef = useRef(null);
+
+  const handleLinkClick = () => {
+    if (menuRef.current) {
+      const collapse = new Collapse(menuRef.current, {
+        hide: true
+      });
+      collapse.hide();
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <Link className="navbar-brand d-flex align-items-center mx-4" to="/">
@@ -16,7 +29,17 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="menu">
+      <div className="collapse navbar-collapse" id="menu" ref={menuRef}>
+        {/* Close Button */}
+        <button
+          className="mobile-menu-close"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-label="Close menu"
+        >
+          <i className="fas fa-times"></i>
+        </button>
+        
         {/* Mobile Menu Logo */}
         <div className="mobile-menu-logo d-lg-none">
           <img src="/kalesh_navbar_logo.png" alt="Kalesh Logo" height="50" />
@@ -24,28 +47,28 @@ function Navbar() {
         
         <ul className="navbar-nav ms-auto gap-1 mx-4">
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/" onClick={handleLinkClick}>
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">
+            <Link className="nav-link" to="/about" onClick={handleLinkClick}>
               About
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/careers">
+            <Link className="nav-link" to="/careers" onClick={handleLinkClick}>
               Careers
             </Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/privacy">
+            <Link className="nav-link" to="/privacy" onClick={handleLinkClick}>
               Privacy
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/promotions">
+            <Link className="nav-link" to="/promotions" onClick={handleLinkClick}>
               Promotions
             </Link>
           </li>
