@@ -19,7 +19,7 @@ const Privacy = () => {
         {/* Hero Section */}
         <div className="row mb-5">
           <div className="col-12 text-center">
-            <h1 className="hero-title mb-4" style={{ fontSize: '3.5rem' }}>
+            <h1 className="hero-title mb-4" style={{ fontSize: '3rem' }}>
               Privacy <span style={{ color: '#ff6a00' }}>&</span> Security
             </h1>
             <p className="text-muted" style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
@@ -58,26 +58,16 @@ const Privacy = () => {
 
           {/* Image Column - col-4 */}
           <div className="col-lg-4 col-md-5">
-            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
-              backgroundColor: 'rgba(255, 106, 0, 0.05)',
-              border: '1px solid rgba(255, 106, 0, 0.3)',
-              minHeight: '500px'
-            }}>
-              <img 
+            <img 
                 src={AnonymityImg} 
                 alt="Anonymous user profile showing privacy features" 
-                className="img-fluid"
+                className="img-fluid logo-glow"
                 style={{ 
                   width: '100%',
-                  maxHeight: '450px',
+                  maxHeight: '500px',
                   objectFit: 'contain',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(255, 106, 0, 0.3)',
-                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
                 }}
               />
-              <small className="text-muted mt-3 d-block">Anonymous Profile Interface</small>
-            </div>
           </div>
         </div>
 
@@ -85,26 +75,16 @@ const Privacy = () => {
         <div className="row align-items-center mb-5">
           {/* Image Column - col-4 */}
           <div className="col-lg-4 col-md-5 order-2 order-md-1">
-            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
-              backgroundColor: 'rgba(255, 106, 0, 0.05)',
-              border: '1px solid rgba(255, 106, 0, 0.3)',
-              minHeight: '450px'
-            }}>
-              <img 
+            <img 
                 src={ReportImg} 
                 alt="Report system for toxic content" 
-                className="img-fluid"
+                className="img-fluid logo-glow"
                 style={{ 
                   width: '100%',
-                  maxHeight: '400px',
+                  maxHeight: '500px',
                   objectFit: 'contain',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(255, 106, 0, 0.3)',
-                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
                 }}
               />
-              <small className="text-muted mt-3 d-block">Content Reporting System</small>
-            </div>
           </div>
 
           {/* Text Column - col-8 */}
@@ -162,26 +142,16 @@ const Privacy = () => {
 
           {/* Image Column - col-4 */}
           <div className="col-lg-4 col-md-5">
-            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
-              backgroundColor: 'rgba(255, 106, 0, 0.05)',
-              border: '1px solid rgba(255, 106, 0, 0.3)',
-              minHeight: '450px'
-            }}>
-              <img 
+            <img 
                 src={ChatImg} 
                 alt="End-to-end encrypted chat interface" 
-                className="img-fluid"
+                className="img-fluid logo-glow"
                 style={{ 
                   width: '100%',
-                  maxHeight: '400px',
+                  maxHeight: '500px',
                   objectFit: 'contain',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(255, 106, 0, 0.3)',
-                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
                 }}
               />
-              <small className="text-muted mt-3 d-block">Encrypted Messaging Interface</small>
-            </div>
           </div>
         </div>
 
@@ -189,26 +159,16 @@ const Privacy = () => {
         <div className="row align-items-center mb-5">
           {/* Image Column - col-4 */}
           <div className="col-lg-4 col-md-5 order-2 order-md-1">
-            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
-              backgroundColor: 'rgba(255, 106, 0, 0.05)',
-              border: '1px solid rgba(255, 106, 0, 0.3)',
-              minHeight: '500px'
-            }}>
-              <img 
+            <img 
                 src={PollImg} 
                 alt="Anonymous poll creation interface" 
-                className="img-fluid"
+                className="img-fluid logo-glow"
                 style={{ 
                   width: '100%',
-                  maxHeight: '450px',
+                  maxHeight: '500px',
                   objectFit: 'contain',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(255, 106, 0, 0.3)',
-                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
                 }}
               />
-              <small className="text-muted mt-3 d-block">Anonymous Poll Creation</small>
-            </div>
           </div>
 
           {/* Text Column - col-8 */}
