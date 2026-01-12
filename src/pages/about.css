@@ -1701,7 +1701,7 @@
 /* Ultra-wide Screens (1400px+) */
 @media only screen and (min-width: 1400px) {
   .team-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 35px;
   }
 }
