@@ -33,6 +33,26 @@
   position: relative;
 }
 
+/* Container for responsive layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive container padding */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
 /* Animated Background Particles */
 .animated-particles {
   position: fixed;
@@ -67,6 +87,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* Hide nav dots on mobile */
+@media (max-width: 768px) {
+  .nav-dots {
+    display: none;
+  }
 }
 
 .nav-dot {
@@ -1946,4 +1973,161 @@
 .timer-value.changing {
   transform: scale(1.1);
   text-shadow: 0 0 15px rgba(255, 106, 0, 0.5);
+}
+
+/* ===== ADDITIONAL MOBILE RESPONSIVENESS FOR ABOUT SECTION ===== */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 50px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .futuristic-card {
+    padding: 30px 25px;
+  }
+  
+  .card-header {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.8rem;
+  }
+  
+  .card-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 15px;
+  }
+  
+  .card-content p {
+    margin-bottom: 20px;
+  }
+  
+  .card-content p::before {
+    left: -20px;
+    font-size: 1rem;
+  }
+  
+  .stats-section {
+    margin-top: 50px;
+  }
+  
+  .stat-item {
+    padding: 25px 20px;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .futuristic-card {
+    padding: 20px 15px;
+    border-radius: 20px;
+  }
+  
+  .card-header {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .card-content {
+    font-size: 0.95rem;
+    padding-left: 10px;
+  }
+  
+  .card-content p::before {
+    left: -15px;
+    font-size: 0.9rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .stat-item {
+    padding: 20px 15px;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .futuristic-card {
+    padding: 15px 12px;
+  }
+  
+  .card-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .card-content {
+    font-size: 0.9rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .stat-item {
+    padding: 15px 10px;
+  }
+  
+  .stat-value {
+    font-size: 1.8rem;
+  }
 }
