@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 
 function Careers() {
@@ -11,6 +11,7 @@ function Careers() {
 
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -51,6 +52,10 @@ function Careers() {
         phone: "",
         resume: null,
       });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (err) {
       alert(err.response?.data?.message || "Something went wrong, try again");
     } finally {
@@ -220,6 +225,7 @@ function Careers() {
                       accept=".pdf,.doc,.docx"
                       onChange={handleChange}
                       required
+                      ref={fileInputRef}
                     />
                   </label>
                 </div>
