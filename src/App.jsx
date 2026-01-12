@@ -10,7 +10,6 @@ const About = lazy(() => import("./pages/About"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Promotions = lazy(() => import("./pages/Promotions"));
 const Careers = lazy(() => import("./pages/Careers"));
-const Features = lazy(() => import("./pages/Features"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const HelpCenter = lazy(() => import("./pages/HelpCenter"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
@@ -51,7 +50,6 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/promotions" element={<Promotions />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/features" element={<Features />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/helpcenter" element={<HelpCenter />} />
             <Route path="/termsandconditions" element={<TermsAndConditions />} />

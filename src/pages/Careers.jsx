@@ -1,7 +1,12 @@
 import { useState, useRef } from "react";
+import { useEffect } from 'react';
 import axios from "axios";
 
 function Careers() {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",

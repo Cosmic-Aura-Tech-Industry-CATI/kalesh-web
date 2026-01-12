@@ -19,7 +19,7 @@ function Footer() {
             <h5 className="footer-title">What We Do</h5>
             <ul className="footer-list">
               <li>
-                <Link to="/features">Features</Link>
+                <Link to="/">Features</Link>
               </li>
               <li>
                 <Link to="/communityguidelines">Community Guidelines</Link>
