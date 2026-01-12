@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import shikhar from "../assets/Shikhar_Dixit.png";
 import swat from "../assets/Swatantra_Singh.png";
 import nish from "../assets/Nishkarsh_Mishra.png";
 import sheelu from "../assets/Sheelu_Singh.png";
 import mridul from "../assets/Mridul_Mishra.png";
 import sid from "../assets/Siddhant_Shekhar.png";
-import './about.css';
+import "./about.css";
 
 function About() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
 
   // Target date: March 16, 2026
-  const targetDate = new Date('March 16, 2026 00:00:00').getTime();
+  const targetDate = new Date("March 16, 2026 00:00:00").getTime();
 
   useEffect(() => {
     // Countdown timer logic
@@ -27,8 +27,12 @@ function About() {
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60)
+        );
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         return { days, hours, minutes, seconds };
@@ -58,7 +62,8 @@ function About() {
       id: 1,
       name: "Shikhar Dixit",
       role: "CEO",
-      description: "Shikhar Dixit is the CEO of Kalesh, responsible for setting the company's vision and strategy. He leads product direction, business growth, and investor relations, ensuring Kalesh remains a safe, anonymous platform for real-time and honest Gen-Z expression.",
+      description:
+        "Shikhar Dixit is the CEO of Kalesh, responsible for setting the company's vision and strategy. He leads product direction, business growth, and investor relations, ensuring Kalesh remains a safe, anonymous platform for real-time and honest Gen-Z expression.",
       linkedin: "https://www.linkedin.com/in/shikhar040/",
       image: shikhar,
     },
@@ -66,7 +71,8 @@ function About() {
       id: 2,
       name: "Swatantra Singh",
       role: "CFO",
-      description: "Swatantra Singh serves as the CFO of Kalesh, managing the company's financial strategy and sustainability. She oversees budgeting, revenue planning, unit economics, and investor financials, ensuring disciplined growth and strong profitability as Kalesh scales.",
+      description:
+        "Swatantra Singh serves as the CFO of Kalesh, managing the company's financial strategy and sustainability. She oversees budgeting, revenue planning, unit economics, and investor financials, ensuring disciplined growth and strong profitability as Kalesh scales.",
       linkedin: "https://www.linkedin.com/in/swatantra-singh308/",
       image: swat,
     },
@@ -74,7 +80,8 @@ function About() {
       id: 3,
       name: "Nishkarsh Mishra",
       role: "COO",
-      description: "Nishkarsh Mishra is the COO of Kalesh, responsible for overseeing day-to-day operations and execution. He manages product rollout, team coordination, and go-to-market execution, ensuring smooth operations and scalable growth across campuses and partnerships.",
+      description:
+        "Nishkarsh Mishra is the COO of Kalesh, responsible for overseeing day-to-day operations and execution. He manages product rollout, team coordination, and go-to-market execution, ensuring smooth operations and scalable growth across campuses and partnerships.",
       linkedin: "https://www.linkedin.com/in/0nishkarshm/",
       image: nish,
     },
@@ -82,7 +89,8 @@ function About() {
       id: 4,
       name: "Sheelu Singh",
       role: "Android Developer",
-      description: "Sheelu Singh is the Android Developer of the Kalesh app, responsible for building, optimizing, and maintaining the Android application to ensure a smooth, secure, and high-performance user experience.",
+      description:
+        "Sheelu Singh is the Android Developer of the Kalesh app, responsible for building, optimizing, and maintaining the Android application to ensure a smooth, secure, and high-performance user experience.",
       linkedin: "https://www.linkedin.com/in/sheelu-singh-bbb788307/",
       image: sheelu,
     },
@@ -90,7 +98,8 @@ function About() {
       id: 5,
       name: "Mridul Mishra",
       role: "Backend Developer",
-      description: "Mridul Mishra is the Backend Developer at Kalesh, responsible for designing and maintaining server-side systems, databases, and APIs to ensure secure, scalable, and reliable app performance.",
+      description:
+        "Mridul Mishra is the Backend Developer at Kalesh, responsible for designing and maintaining server-side systems, databases, and APIs to ensure secure, scalable, and reliable app performance.",
       linkedin: "https://www.linkedin.com/in/mridul-mishra-4717b828b/",
       image: mridul,
     },
@@ -98,22 +107,26 @@ function About() {
       id: 6,
       name: "Siddhant Shekhar",
       role: "Web Developer",
-      description: "Siddhant Shekhar is the Web Developer at Kalesh, responsible for developing and maintaining the web platforms, including the admin panel and support interfaces, ensuring smooth functionality and seamless user experience.",
+      description:
+        "Siddhant Shekhar is the Web Developer at Kalesh, responsible for developing and maintaining the web platforms, including the admin panel and support interfaces, ensuring smooth functionality and seamless user experience.",
       linkedin: "https://www.linkedin.com/in/shekhar18/",
       image: sid,
-    }
+    },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'team'];
+      const sections = ["hero", "about", "team"];
       const scrollPosition = window.scrollY + 100;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -121,23 +134,25 @@ function About() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const handleNotifyClick = () => {
-    alert('Thank you! We will notify you when Kalesh launches on March 16, 2026!');
+    alert(
+      "Thank you! We will notify you when Kalesh launches on March 16, 2026!"
+    );
   };
 
   const handleCTAClick = () => {
-    window.location.href = '/careers';
+    window.location.href = "/careers";
   };
 
   return (
@@ -145,7 +160,7 @@ function About() {
       {/* Animated Background Particles */}
       <div className="animated-particles">
         {[...Array(20)].map((_, i) => (
-          <div 
+          <div
             key={i}
             className="particle"
             style={{
@@ -155,7 +170,8 @@ function About() {
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 20}s`,
               animationDuration: `${Math.random() * 30 + 20}s`,
-              background: i % 3 === 0 ? '#ff6a00' : i % 3 === 1 ? '#ffd700' : '#00ffcc'
+              background:
+                i % 3 === 0 ? "#ff6a00" : i % 3 === 1 ? "#ffd700" : "#00ffcc",
             }}
           />
         ))}
@@ -171,10 +187,10 @@ function About() {
 
       {/* Navigation Dots */}
       <div className="nav-dots">
-        {['hero', 'about', 'team'].map((section) => (
+        {["hero", "about", "team"].map((section) => (
           <button
             key={section}
-            className={`nav-dot ${activeSection === section ? 'active' : ''}`}
+            className={`nav-dot ${activeSection === section ? "active" : ""}`}
             onClick={() => scrollToSection(section)}
             aria-label={`Go to ${section} section`}
           >
@@ -192,22 +208,23 @@ function About() {
               <div className="hero-left">
                 <div className="logo-container">
                   <div className="logo-3d-wrapper">
-                    <img 
-                      src="/logo.png" 
-                      alt="Kalesh Logo" 
+                    <img
+                      src="/logo.png"
+                      alt="Kalesh Logo"
                       className="hero-logo"
                     />
                     <div className="logo-hologram"></div>
                   </div>
                 </div>
-                
+
                 <div className="hero-slogan">
                   <h1 className="kalesh-text">
                     <span className="k-letter">K</span>
                     <span className="alesh-text">ALESH</span>
                   </h1>
                   <p className="tagline">
-                    A Platform Where Your Opinion Matters<br />
+                    A Platform Where Your Opinion Matters
+                    <br />
                     <span className="highlight">Not Your Identity</span>
                   </p>
                 </div>
@@ -216,54 +233,69 @@ function About() {
               {/* Right - Coming Soon Button */}
               <div className="hero-right">
                 <div className="coming-soon-card">
-                  <div className="coming-soon-badge" style={{marginBottom: '60px'}}>
+                  <div
+                    className="coming-soon-badge"
+                    style={{ marginBottom: "60px" }}
+                  >
                     <span className="badge-text">COMING SOON</span>
                     <div className="badge-glow"></div>
                   </div>
                   <div className="coming-soon-content">
-                    <h3>Get Ready for <span className="kalesh-gradient">Kalesh</span></h3>
-                    <p>India's first anonymous social media platform is launching on March 16, 2026</p>
+                    <h3>
+                      Get Ready for{" "}
+                      <span className="kalesh-gradient">Kalesh</span>
+                    </h3>
+                    <p>
+                      India's first anonymous social media platform is launching
+                      on March 16, 2026
+                    </p>
                     <button className="notify-btn" onClick={handleNotifyClick}>
                       <span className="btn-text">Notify Me</span>
                       <span className="btn-icon">→</span>
                     </button>
                   </div>
-                  
+
                   {/* Countdown Timer */}
                   <div className="countdown-timer">
                     <div className="timer-glow"></div>
                     <div className="timer-grid">
                       {/* Days */}
                       <div className="timer-item">
-                        <span className="timer-value">{formatNumber(timeLeft.days)}</span>
+                        <span className="timer-value">
+                          {formatNumber(timeLeft.days)}
+                        </span>
                         <span className="timer-label">Days</span>
                       </div>
-                      
+
                       {/* Separator */}
                       <div className="timer-separator">:</div>
-                      
+
                       {/* Hours */}
                       <div className="timer-item">
-                        <span className="timer-value">{formatNumber(timeLeft.hours)}</span>
+                        <span className="timer-value">
+                          {formatNumber(timeLeft.hours)}
+                        </span>
                         <span className="timer-label">Hours</span>
                       </div>
-                      
+
                       {/* Separator */}
                       <div className="timer-separator">:</div>
-                      
+
                       {/* Minutes */}
                       <div className="timer-item">
-                        <span className="timer-value">{formatNumber(timeLeft.minutes)}</span>
+                        <span className="timer-value">
+                          {formatNumber(timeLeft.minutes)}
+                        </span>
                         <span className="timer-label">Minutes</span>
                       </div>
-                      
-                    
-                     
                     </div>
-                    
+
                     {/* Launch Date Info */}
                     <div className="launch-date-info">
-                      <p className="launch-date">Launch Date: <span className="date-highlight">March 16, 2026</span></p>
+                      <p className="launch-date">
+                        Launch Date:{" "}
+                        <span className="date-highlight">March 16, 2026</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -300,10 +332,21 @@ function About() {
                 </div>
                 <div className="card-content">
                   <p>
-                    In today's digital ecosystem, most social media platforms are identity-driven and centered around public profiles, likes, and followers, which creates social pressure and discourages honest expression. Users often hesitate to share their real opinions due to fear of judgment, online backlash, screenshots, and long-term reputational impact.
+                    In today's digital ecosystem, most social media platforms
+                    are identity-driven and centered around public profiles,
+                    likes, and followers, which creates social pressure and
+                    discourages honest expression. Users often hesitate to share
+                    their real opinions due to fear of judgment, online
+                    backlash, screenshots, and long-term reputational impact.
                   </p>
                   <p>
-                    This environment particularly affects Gen-Z users, students, and introverts, who lack a safe and comfortable space to express themselves freely. Additionally, existing platforms prioritize reach based on popularity rather than content relevance, making it difficult for new users to be heard and preventing brands and institutions from receiving instant, unbiased audience feedback.
+                    This environment particularly affects Gen-Z users, students,
+                    and introverts, who lack a safe and comfortable space to
+                    express themselves freely. Additionally, existing platforms
+                    prioritize reach based on popularity rather than content
+                    relevance, making it difficult for new users to be heard and
+                    preventing brands and institutions from receiving instant,
+                    unbiased audience feedback.
                   </p>
                 </div>
               </div>
@@ -320,10 +363,20 @@ function About() {
                 </div>
                 <div className="card-content">
                   <p>
-                    Kalesh solves this problem by offering a fully anonymous, real-time opinion and polling platform that removes identity pressure and promotes authentic participation. Users can create live polls, vote instantly, and engage in discussions without revealing their identity, ensuring opinions are judged by content rather than personal branding.
+                    Kalesh solves this problem by offering a fully anonymous,
+                    real-time opinion and polling platform that removes identity
+                    pressure and promotes authentic participation. Users can
+                    create live polls, vote instantly, and engage in discussions
+                    without revealing their identity, ensuring opinions are
+                    judged by content rather than personal branding.
                   </p>
                   <p>
-                    The real-time engagement model allows users to participate immediately after joining, while colleges, brands, and creators gain access to honest and unbiased feedback. With strong moderation and safety controls, Kalesh provides a secure, judgment-free environment that enables genuine expression and meaningful engagement.
+                    The real-time engagement model allows users to participate
+                    immediately after joining, while colleges, brands, and
+                    creators gain access to honest and unbiased feedback. With
+                    strong moderation and safety controls, Kalesh provides a
+                    secure, judgment-free environment that enables genuine
+                    expression and meaningful engagement.
                   </p>
                 </div>
               </div>
@@ -377,18 +430,18 @@ function About() {
               <div key={member.id} className="team-member-card">
                 {/* Card Inner Glow */}
                 <div className="card-inner-glow"></div>
-                
+
                 {/* Floating Elements */}
                 <div className="card-floating-element floating-1"></div>
                 <div className="card-floating-element floating-2"></div>
                 <div className="card-floating-element floating-3"></div>
                 <div className="card-floating-element floating-4"></div>
-                
+
                 {/* Member Image */}
                 <div className="member-image-container">
                   <div className="image-hologram-frame">
-                    <img 
-                      src={member.image} 
+                    <img
+                      src={member.image}
                       alt={member.name}
                       className="member-image"
                     />
@@ -408,9 +461,9 @@ function About() {
 
                 {/* LinkedIn Button */}
                 <div className="member-connect">
-                  <a 
-                    href={member.linkedin} 
-                    target="_blank" 
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="neon-linkedin-btn"
                   >
