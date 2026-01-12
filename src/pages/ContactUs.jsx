@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 
 function ContactUs() {
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,7 +14,8 @@ function ContactUs() {
     message: ""
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,22 +25,24 @@ function ContactUs() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
     // In a real app, you would send this data to your backend
     console.log("Form submitted:", formData);
-    setIsSubmitted(true);
+
+    setIsLoading(false);
+    setShowPopup(true);
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: ""
     });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
   };
 
   const teamMembers = [
@@ -169,11 +177,14 @@ function ContactUs() {
               </p>
             </div>
 
-            {isSubmitted ? (
-              <div className="success-message">
+            {showPopup ? (
+              <div className="success-message glass-card">
                 <div className="success-icon">✓</div>
                 <h3>Message Sent Successfully!</h3>
                 <p>We'll get back to you soon. Your privacy remains protected.</p>
+                <button className="submit-button" onClick={() => setShowPopup(false)}>
+                  Send Another Message
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form">
@@ -237,8 +248,15 @@ function ContactUs() {
                   <p>Your message will be handled with strict privacy. No personal data is stored unless necessary for your request.</p>
                 </div>
 
-                <button type="submit" className="submit-button">
-                  Send Message Securely
+                <button type="submit" className="submit-button" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <div className="loader"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message Securely"
+                  )}
                 </button>
               </form>
             )}
@@ -308,6 +326,20 @@ function ContactUs() {
             </div>
           </div>
         </section>
+
+        {/* Success Popup */}
+        {showPopup && (
+          <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+            <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+              <div className="popup-icon">✓</div>
+              <h3 className="popup-title">Message Sent Successfully!</h3>
+              <p className="popup-message">We'll get back to you soon. Your privacy remains protected.</p>
+              <button className="popup-close-btn" onClick={() => setShowPopup(false)}>
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

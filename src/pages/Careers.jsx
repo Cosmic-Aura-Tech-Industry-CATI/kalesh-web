@@ -10,10 +10,11 @@ function Careers() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-
+    console.log(name);
     if (name === "resume") {
       setFormData({ ...formData, resume: files[0] });
     } else {
@@ -42,7 +43,7 @@ function Careers() {
         data
       );
 
-      alert("Application submitted successfully 🎉");
+      setShowPopup(true);
 
       setFormData({
         name: "",
@@ -201,12 +202,12 @@ function Careers() {
                       <i className="fa-solid fa-cloud-arrow-up file-upload-icon"></i>
                       <span className="file-upload-text">
                         Click to upload your resume{" "}
-                        <input
+                         {/*<input
                           type="file"
                           id="resume-upload"
                           className="file-upload-input"
                           accept=".pdf,.doc,.docx"
-                        />
+                        />*/}
                       </span>
                       <span className="file-upload-hint">
                         PDF, DOC, DOCX up to 5MB
@@ -224,10 +225,19 @@ function Careers() {
                 </div>
               </div>
 
-              <button type="submit" className="golden-orange-submit-btn">
-                <span className="btn-text">APPLY NOW</span>
-                <span className="btn-glow"></span>
-                <i className="fa-solid fa-arrow-right btn-icon"></i>
+              <button type="submit" className="golden-orange-submit-btn" disabled={loading}>
+                {loading ? (
+                  <>
+                    <div className="loader"></div>
+                    <span className="btn-text">SUBMITTING...</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="btn-text">APPLY NOW</span>
+                    <span className="btn-glow"></span>
+                    <i className="fa-solid fa-arrow-right btn-icon"></i>
+                  </>
+                )}
               </button>
             </form>
             <div className="form-decoration-bottom"></div>
@@ -268,6 +278,20 @@ function Careers() {
           </div>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <div className="popup-icon">✓</div>
+            <h3 className="popup-title">Form Submitted Successfully!</h3>
+            <p className="popup-message">Our team will connect with you as soon as possible.</p>
+            <button className="popup-close-btn" onClick={() => setShowPopup(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
