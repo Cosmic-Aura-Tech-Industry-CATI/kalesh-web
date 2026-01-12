@@ -2040,6 +2040,17 @@ a:focus {
   align-items: center;
 }
 
+.promo-image-col {
+  display: flex;
+  justify-content: center;
+}
+
+.promo-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .promo-image {
   width: 100%;
   max-width: 820px;
@@ -2118,7 +2129,8 @@ a:focus {
   border: 2px solid rgba(212, 175, 55, 0.45);
   box-shadow: 0 0 60px rgba(255, 106, 0, 0.25);
   padding: 36px;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
   margin-top: 7%;
   
@@ -2222,6 +2234,248 @@ a:focus {
   .gold-theme {
     padding: 22px;
     backdrop-filter: none;
+  }
+}
+
+/* ===== PROMOTIONS PAGE RESPONSIVE STYLES ===== */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .promo-page {
+    padding: 40px 20px;
+  }
+  
+  .promo-info-container {
+    padding: 25px;
+    margin: 20px auto;
+  }
+  
+  .promo-row {
+    gap: 40px;
+  }
+  
+  .promo-image {
+    height: 300px;
+  }
+  
+  .promo-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .promo-para {
+    font-size: 16px;
+  }
+  
+  .promo-between-text {
+    font-size: 2.2rem;
+    margin-top: 4%;
+  }
+  
+  .gold-theme {
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    margin-top: 5%;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .promo-page {
+    padding: 30px 15px;
+  }
+  
+  .promo-info-container {
+    padding: 20px;
+    margin: 15px auto 30px;
+    border-radius: 12px;
+  }
+  
+  .promo-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .promo-image-col {
+    order: 2;
+  }
+  
+  .promo-text-col {
+    order: 1;
+  }
+  
+  .promo-image {
+    height: 250px;
+    max-width: 100%;
+  }
+  
+  .promo-title {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .promo-para {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .promo-between-text {
+    font-size: 1.8rem;
+    margin-top: 6%;
+  }
+  
+  .gold-theme {
+    width: 95%;
+    max-width: none;
+    padding: 25px 20px;
+    margin-top: 6%;
+    border-radius: 16px;
+  }
+  
+  .promo-between-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .gold-form {
+    gap: 20px;
+  }
+  
+  .gold-field label {
+    font-size: 12px;
+  }
+  
+  .gold-field input,
+  .gold-field textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  
+  .gold-button {
+    width: 180px;
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .promo-page {
+    padding: 20px 10px;
+  }
+  
+  .promo-info-container {
+    padding: 15px;
+    margin: 10px auto 20px;
+  }
+  
+  .promo-row {
+    gap: 20px;
+  }
+  
+  .promo-image {
+    height: 200px;
+  }
+  
+  .promo-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .promo-para {
+    font-size: 14px;
+  }
+  
+  .promo-between-text {
+    font-size: 1.4rem;
+    margin-top: 8%;
+  }
+  
+  .gold-theme {
+    width: 100%;
+    padding: 20px 15px;
+    margin-top: 8%;
+  }
+  
+  .promo-between-title {
+    font-size: 1.3rem !important;
+  }
+  
+  .gold-form {
+    gap: 18px;
+  }
+  
+  .gold-field label {
+    font-size: 11px;
+    gap: 6px;
+  }
+  
+  .gold-field .icon {
+    font-size: 14px;
+  }
+  
+  .gold-field input,
+  .gold-field textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .gold-field textarea {
+    min-height: 90px;
+  }
+  
+  .gold-button {
+    width: 160px;
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .status {
+    font-size: 14px;
+  }
+}
+
+/* Very Small Mobile Styles */
+@media (max-width: 375px) {
+  .promo-info-container {
+    padding: 12px;
+  }
+  
+  .promo-image {
+    height: 180px;
+  }
+  
+  .promo-title {
+    font-size: 1.4rem;
+  }
+  
+  .promo-para {
+    font-size: 13px;
+  }
+  
+  .promo-between-text {
+    font-size: 1.2rem;
+  }
+  
+  .gold-theme {
+    padding: 15px 12px;
+  }
+  
+  .promo-between-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .gold-field input,
+  .gold-field textarea {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .gold-button {
+    width: 140px;
+    padding: 10px;
+    font-size: 12px;
   }
 }
 

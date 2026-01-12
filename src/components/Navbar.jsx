@@ -33,8 +33,7 @@ function Navbar() {
         {/* Close Button */}
         <button
           className="mobile-menu-close"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu"
+          onClick={handleLinkClick}
           aria-label="Close menu"
         >
           <i className="fas fa-times"></i>
