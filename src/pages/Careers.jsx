@@ -1,10 +1,71 @@
+import { useState } from "react";
+import axios from "axios";
+
 function Careers() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    resume: null,
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+
+    if (name === "resume") {
+      setFormData({ ...formData, resume: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.resume) {
+      return alert("Please upload your resume");
+    }
+
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("resume", formData.resume);
+
+    try {
+      setLoading(true);
+
+      const res = await axios.post(
+        "http://localhost:8000/api/v1/applications",
+        data
+      );
+
+      alert("Application submitted successfully 🎉");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        resume: null,
+      });
+    } catch (err) {
+      alert(err.response?.data?.message || "Something went wrong, try again");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="container-fluid careers-page px-0">
       {/* TOP HEADING */}
       <div className="container text-center py-5">
         <h1 className="careers-title">
-          Build the future at the heart of change at <h1><span>Kalesh.</span></h1>
+          Build the future at the heart of change at{" "}
+          <h1>
+            <span>Kalesh.</span>
+          </h1>
         </h1>
       </div>
 
@@ -39,9 +100,8 @@ function Careers() {
           <p className="career-quote-text">
             We are on an exciting journey to become India's first fully
             anonymous platform. Our commitment to leading with empathy,
-            resilience, and purpose enables us to create a positive impact
-            for our employees, customers, partners, and the communities we
-            serve.
+            resilience, and purpose enables us to create a positive impact for
+            our employees, customers, partners, and the communities we serve.
           </p>
           <div className="career-quote-author">
             <i className="fa-solid fa-user"></i>
@@ -66,17 +126,21 @@ function Careers() {
           {/* FORM WITH GOLDEN-ORANGE BORDER */}
           <div className="golden-orange-form-container">
             <div className="form-decoration-top"></div>
-            <form className="career-form">
+            <form className="career-form" onSubmit={handleSubmit}>
               <div className="form-group-golden mb-4">
                 <label className="golden-orange-label">
                   <i className="fas fa-user-circle label-icon"></i>
                   Name
                 </label>
                 <div className="golden-input-wrapper">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="golden-orange-input"
                     placeholder="Enter your full name"
+                    required
                   />
                   <span className="golden-input-icon">
                     <i className="fa-regular fa-user"></i>
@@ -90,10 +154,14 @@ function Careers() {
                   E-mail ID
                 </label>
                 <div className="golden-input-wrapper">
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="golden-orange-input"
-                    placeholder="Enter your email address"
+                    placeholder="Enter your email"
+                    required
                   />
                   <span className="golden-input-icon">
                     <i className="fa-regular fa-envelope"></i>
@@ -107,10 +175,14 @@ function Careers() {
                   Phone No
                 </label>
                 <div className="golden-input-wrapper">
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="golden-orange-input"
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your phone"
+                    required
                   />
                   <span className="golden-input-icon">
                     <i className="fa-solid fa-phone"></i>
@@ -128,18 +200,25 @@ function Careers() {
                     <div className="file-upload-content">
                       <i className="fa-solid fa-cloud-arrow-up file-upload-icon"></i>
                       <span className="file-upload-text">
-                        Click to upload your resume
+                        Click to upload your resume{" "}
+                        <input
+                          type="file"
+                          id="resume-upload"
+                          className="file-upload-input"
+                          accept=".pdf,.doc,.docx"
+                        />
                       </span>
                       <span className="file-upload-hint">
                         PDF, DOC, DOCX up to 5MB
                       </span>
                     </div>
                     <div className="file-upload-border"></div>
-                    <input 
-                      type="file" 
-                      id="resume-upload" 
-                      className="file-upload-input"
+                    <input
+                      type="file"
+                      name="resume"
                       accept=".pdf,.doc,.docx"
+                      onChange={handleChange}
+                      required
                     />
                   </label>
                 </div>
