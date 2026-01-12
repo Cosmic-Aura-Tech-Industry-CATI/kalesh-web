@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 function Promotions() {
+  useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   const [form, setForm] = useState({
     name: "",
     email: "",

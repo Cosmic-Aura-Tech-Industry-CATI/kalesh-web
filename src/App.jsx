@@ -9,7 +9,6 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Promotions = lazy(() => import("./pages/Promotions"));
-const PaidPromotions = lazy(() => import("./pages/PaidPromotions"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Features = lazy(() => import("./pages/Features"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
@@ -51,7 +50,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/promotions" element={<Promotions />} />
-            <Route path="/paidpromotions" element={<PaidPromotions />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/features" element={<Features />} />
             <Route path="/contactus" element={<ContactUs />} />
