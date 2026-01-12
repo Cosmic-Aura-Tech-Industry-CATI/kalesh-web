@@ -1,39 +1,253 @@
-function Privacy() {
+import React from 'react';
+import '../index.css';
+
+// Import images from assets folder
+import AnonymityImg from '../assets/AnonymityImg.png';
+import ReportImg from '../assets/Toxic-polls.png';
+import ChatImg from '../assets/end-to-end.png';
+import PollImg from '../assets/Anno-opinion.png';
+
+const Privacy = () => {
   return (
-    <div className="container-fluid py-5 px-5">
-      <h2 className="mb-4">Privacy at Kalesh</h2>
+    <div className="privacy-page" style={{
+      backgroundColor: '#0b0b0b',
+      color: '#ffffff',
+      minHeight: '100vh',
+      paddingTop: '80px'
+    }}>
+      <div className="container py-5">
+        {/* Hero Section */}
+        <div className="row mb-5">
+          <div className="col-12 text-center">
+            <h1 className="hero-title mb-4" style={{ fontSize: '3.5rem' }}>
+              Privacy <span style={{ color: '#ff6a00' }}>&</span> Security
+            </h1>
+            <p className="text-muted" style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+              At Kalesh, we're committed to protecting your privacy and ensuring a secure, 
+              judgment-free experience for everyone.
+            </p>
+          </div>
+        </div>
 
-      <p className="mb-4">
-        Kalesh is committed to protecting your privacy and creating a safe space for authentic, judgment-free expression. Our privacy-first approach ensures your data is secure and your identity remains confidential.
-      </p>
+        {/* Row 1: Text on left (col-8), Image on right (col-4) */}
+        <div className="row align-items-center mb-5">
+          {/* Text Column - col-8 */}
+          <div className="col-lg-8 col-md-7 mb-4 mb-md-0">
+            <div className="golden-orange-form-container">
+              <section>
+                <div className="d-flex align-items-center mb-4">
+                  <div className="me-3">
+                    <i className="fas fa-user-secret fa-2x" style={{ color: '#ff6a00' }}></i>
+                  </div>
+                  <div>
+                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Anonymity</h2>
+                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
+                  </div>
+                </div>
+                
+                <div className="glass-card p-4">
+                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                    <strong>Kalesh maintains user anonymity through anonymous profiles</strong>, ensuring 
+                    privacy, security, and judgment-free expression. Your identity is protected while 
+                    you freely express yourself in our community.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
 
-      <h4 className="mt-4 mb-3">How We Protect Your Privacy:</h4>
+          {/* Image Column - col-4 */}
+          <div className="col-lg-4 col-md-5">
+            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
+              backgroundColor: 'rgba(255, 106, 0, 0.05)',
+              border: '1px solid rgba(255, 106, 0, 0.3)',
+              minHeight: '500px'
+            }}>
+              <img 
+                src={AnonymityImg} 
+                alt="Anonymous user profile showing privacy features" 
+                className="img-fluid"
+                style={{ 
+                  width: '100%',
+                  maxHeight: '450px',
+                  objectFit: 'contain',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255, 106, 0, 0.3)',
+                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
+                }}
+              />
+              <small className="text-muted mt-3 d-block">Anonymous Profile Interface</small>
+            </div>
+          </div>
+        </div>
 
-      <ul>
-        <li><strong>Anonymous Profiles:</strong> Maintain full anonymity with no personal identification required.</li>
-        <li><strong>End-to-End Encryption:</strong> All messages are fully encrypted to keep your conversations private.</li>
-        <li><strong>Disappearing Messages:</strong> Set messages to auto-delete after a chosen timeframe for added security.</li>
-        <li><strong>Content Reporting:</strong> Easily report harmful content to help us keep the community safe.</li>
-        <li><strong>No Data Selling:</strong> We never sell or share your personal data with third parties.</li>
-      </ul>
+        {/* Row 2: Image on left (col-4), Text on right (col-8) */}
+        <div className="row align-items-center mb-5">
+          {/* Image Column - col-4 */}
+          <div className="col-lg-4 col-md-5 order-2 order-md-1">
+            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
+              backgroundColor: 'rgba(255, 106, 0, 0.05)',
+              border: '1px solid rgba(255, 106, 0, 0.3)',
+              minHeight: '450px'
+            }}>
+              <img 
+                src={ReportImg} 
+                alt="Report system for toxic content" 
+                className="img-fluid"
+                style={{ 
+                  width: '100%',
+                  maxHeight: '400px',
+                  objectFit: 'contain',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255, 106, 0, 0.3)',
+                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
+                }}
+              />
+              <small className="text-muted mt-3 d-block">Content Reporting System</small>
+            </div>
+          </div>
 
-      <h4 className="mt-5 mb-3">Your Privacy Controls:</h4>
-      <ul>
-        <li>Customizable anonymity settings</li>
-        <li>Message expiration controls</li>
-        <li>Block and report users directly</li>
-        <li>Clear data retention policies</li>
-      </ul>
+          {/* Text Column - col-8 */}
+          <div className="col-lg-8 col-md-7 mb-4 mb-md-0 order-1 order-md-2">
+            <div className="golden-orange-form-container">
+              <section>
+                <div className="d-flex align-items-center mb-4">
+                  <div className="me-3">
+                    <i className="fas fa-shield-alt fa-2x" style={{ color: '#ff6a00' }}></i>
+                  </div>
+                  <div>
+                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Security & Safety</h2>
+                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
+                  </div>
+                </div>
+                
+                <div className="glass-card p-4">
+                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                    Easily report toxic, abusive, or harmful content on Kalesh to help us maintain a 
+                    safe, respectful, and judgment-free community. Our moderation team reviews all 
+                    reports promptly to ensure a positive environment for everyone.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
 
-      <p className="mt-4">
-        For more details, read our full <a href="/privacy-policy">Privacy Policy</a> or contact our <a href="/security">Security Advisory</a> team.
-      </p>
+        {/* Row 3: Text on left (col-8), Image on right (col-4) */}
+        <div className="row align-items-center mb-5">
+          {/* Text Column - col-8 */}
+          <div className="col-lg-8 col-md-7 mb-4 mb-md-0">
+            <div className="golden-orange-form-container">
+              <section>
+                <div className="d-flex align-items-center mb-4">
+                  <div className="me-3">
+                    <i className="fas fa-lock fa-2x" style={{ color: '#ff6a00' }}></i>
+                  </div>
+                  <div>
+                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>End-to-End Encrypted Messaging</h2>
+                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
+                  </div>
+                </div>
+                
+                <div className="glass-card p-4">
+                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                    Enjoy a secure, private messaging experience on Kalesh with full end-to-end 
+                    encryption that protects your chats and keeps conversations confidential. Only you 
+                    and the recipient can read what's sent.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
 
-      <div className="mt-4 text-muted small">
-        © 2026 Kalesh. All rights reserved. | <a href="/terms">Terms & Privacy Policy</a>
+          {/* Image Column - col-4 */}
+          <div className="col-lg-4 col-md-5">
+            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
+              backgroundColor: 'rgba(255, 106, 0, 0.05)',
+              border: '1px solid rgba(255, 106, 0, 0.3)',
+              minHeight: '450px'
+            }}>
+              <img 
+                src={ChatImg} 
+                alt="End-to-end encrypted chat interface" 
+                className="img-fluid"
+                style={{ 
+                  width: '100%',
+                  maxHeight: '400px',
+                  objectFit: 'contain',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255, 106, 0, 0.3)',
+                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
+                }}
+              />
+              <small className="text-muted mt-3 d-block">Encrypted Messaging Interface</small>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 4: Image on left (col-4), Text on right (col-8) */}
+        <div className="row align-items-center mb-5">
+          {/* Image Column - col-4 */}
+          <div className="col-lg-4 col-md-5 order-2 order-md-1">
+            <div className="glass-card p-3 text-center d-flex flex-column justify-content-center align-items-center h-100" style={{ 
+              backgroundColor: 'rgba(255, 106, 0, 0.05)',
+              border: '1px solid rgba(255, 106, 0, 0.3)',
+              minHeight: '500px'
+            }}>
+              <img 
+                src={PollImg} 
+                alt="Anonymous poll creation interface" 
+                className="img-fluid"
+                style={{ 
+                  width: '100%',
+                  maxHeight: '450px',
+                  objectFit: 'contain',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255, 106, 0, 0.3)',
+                  boxShadow: '0 0 20px rgba(255, 106, 0, 0.2)'
+                }}
+              />
+              <small className="text-muted mt-3 d-block">Anonymous Poll Creation</small>
+            </div>
+          </div>
+
+          {/* Text Column - col-8 */}
+          <div className="col-lg-8 col-md-7 mb-4 mb-md-0 order-1 order-md-2">
+            <div className="golden-orange-form-container">
+              <section>
+                <div className="d-flex align-items-center mb-4">
+                  <div className="me-3">
+                    <i className="fas fa-hourglass-end fa-2x" style={{ color: '#ff6a00' }}></i>
+                  </div>
+                  <div>
+                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Disappearing Messages</h2>
+                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
+                  </div>
+                </div>
+                
+                <div className="glass-card p-4">
+                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                    Enable disappearing messages on Kalesh for secure, self-destructing chats that 
+                    automatically delete after a set time, ensuring privacy and data protection. Take 
+                    control of your digital footprint.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional footer if needed space*/}
+        
       </div>
+
+      {/* Add Font Awesome for icons */}
+      <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+      />
     </div>
   );
-}
+};
 
 export default Privacy;
