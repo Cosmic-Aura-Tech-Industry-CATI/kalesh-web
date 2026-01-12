@@ -1,213 +1,171 @@
-import React from 'react';
-import '../index.css';
+import { useState } from "react";
 
-// Import images from assets folder
-import AnonymityImg from '../assets/AnonymityImg.png';
-import ReportImg from '../assets/Toxic-polls.png';
-import ChatImg from '../assets/end-to-end.png';
-import PollImg from '../assets/Anno-opinion.png';
+function Promotions() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-const Privacy = () => {
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+
+  // HANDLE CHANGE
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // VALIDATION
+  const validate = () => {
+    const newErrors = {};
+
+    if (!form.name.trim()) newErrors.name = "Name is required";
+    if (!form.email.match(/^\S+@\S+\.\S+$/))
+      newErrors.email = "Valid email required";
+    if (!form.phone.match(/^[0-9]{10}$/))
+      newErrors.phone = "Enter 10-digit phone number";
+    if (!form.message.trim()) newErrors.message = "Message cannot be empty";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // SUBMIT (BACKEND CONNECT)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setLoading(true);
+    setSuccess("");
+
+    try {
+      // 🔗 BACKEND API (change URL)
+      const res = await fetch("http://localhost:8000/api/v1/promotions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      setSuccess("✅ Message sent successfully!");
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setSuccess("❌ Something went wrong. Try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <div className="privacy-page" style={{
-      backgroundColor: '#0b0b0b',
-      color: '#ffffff',
-      minHeight: '100vh',
-      paddingTop: '80px'
-    }}>
-      <div className="container py-5">
-        {/* Hero Section */}
-        <div className="row mb-5">
-          <div className="col-12 text-center">
-            <h1 className="hero-title mb-4" style={{ fontSize: '3rem' }}>
-              Privacy <span style={{ color: '#ff6a00' }}>&</span> Security
-            </h1>
-            <p className="text-muted" style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
-              At Kalesh, we're committed to protecting your privacy and ensuring a secure, 
-              judgment-free experience for everyone.
+    <div className="promo-page">
+      {/* IMAGE + TEXT */}
+      <div className="promo-info-container">
+        <div className="promo-row">
+          <div className="promo-image-col">
+            <img
+              src="/promotion-image.png"
+              alt="How can we help you"
+              className="promo-image"
+            />
+          </div>
+
+          <div className="promo-text-col">
+            <h2 className="promo-title">Let’s Collaborate</h2>
+            <p className="promo-para">
+              Connect with Kalesh for influencer and brand collaborations,
+              partnerships, or support. Reach out via our contact form or choose
+              a topic below so we can best support your growth and success with
+              us.
             </p>
           </div>
         </div>
-
-        {/* Row 1: Text on left (col-8), Image on right (col-4) */}
-        <div className="row align-items-center mb-5">
-          {/* Text Column - col-8 */}
-          <div className="col-lg-8 col-md-7 mb-4 mb-md-0">
-            <div className="golden-orange-form-container">
-              <section>
-                <div className="d-flex align-items-center mb-4">
-                  <div className="me-3">
-                    <i className="fas fa-user-secret fa-2x" style={{ color: '#ff6a00' }}></i>
-                  </div>
-                  <div>
-                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Anonymity</h2>
-                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
-                  </div>
-                </div>
-                
-                <div className="glass-card p-4">
-                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                    <strong>Kalesh maintains user anonymity through anonymous profiles</strong>, ensuring 
-                    privacy, security, and judgment-free expression. Your identity is protected while 
-                    you freely express yourself in our community.
-                  </p>
-                </div>
-              </section>
-            </div>
-          </div>
-
-          {/* Image Column - col-4 */}
-          <div className="col-lg-4 col-md-5">
-            <img 
-                src={AnonymityImg} 
-                alt="Anonymous user profile showing privacy features" 
-                className="img-fluid logo-glow"
-                style={{ 
-                  width: '100%',
-                  maxHeight: '500px',
-                  objectFit: 'contain',
-                }}
-              />
-          </div>
-        </div>
-
-        {/* Row 2: Image on left (col-4), Text on right (col-8) */}
-        <div className="row align-items-center mb-5">
-          {/* Image Column - col-4 */}
-          <div className="col-lg-4 col-md-5 order-2 order-md-1">
-            <img 
-                src={ReportImg} 
-                alt="Report system for toxic content" 
-                className="img-fluid logo-glow"
-                style={{ 
-                  width: '100%',
-                  maxHeight: '500px',
-                  objectFit: 'contain',
-                }}
-              />
-          </div>
-
-          {/* Text Column - col-8 */}
-          <div className="col-lg-8 col-md-7 mb-4 mb-md-0 order-1 order-md-2">
-            <div className="golden-orange-form-container">
-              <section>
-                <div className="d-flex align-items-center mb-4">
-                  <div className="me-3">
-                    <i className="fas fa-shield-alt fa-2x" style={{ color: '#ff6a00' }}></i>
-                  </div>
-                  <div>
-                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Security & Safety</h2>
-                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
-                  </div>
-                </div>
-                
-                <div className="glass-card p-4">
-                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                    Easily report toxic, abusive, or harmful content on Kalesh to help us maintain a 
-                    safe, respectful, and judgment-free community. Our moderation team reviews all 
-                    reports promptly to ensure a positive environment for everyone.
-                  </p>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 3: Text on left (col-8), Image on right (col-4) */}
-        <div className="row align-items-center mb-5">
-          {/* Text Column - col-8 */}
-          <div className="col-lg-8 col-md-7 mb-4 mb-md-0">
-            <div className="golden-orange-form-container">
-              <section>
-                <div className="d-flex align-items-center mb-4">
-                  <div className="me-3">
-                    <i className="fas fa-lock fa-2x" style={{ color: '#ff6a00' }}></i>
-                  </div>
-                  <div>
-                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>End-to-End Encrypted Messaging</h2>
-                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
-                  </div>
-                </div>
-                
-                <div className="glass-card p-4">
-                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                    Enjoy a secure, private messaging experience on Kalesh with full end-to-end 
-                    encryption that protects your chats and keeps conversations confidential. Only you 
-                    and the recipient can read what's sent.
-                  </p>
-                </div>
-              </section>
-            </div>
-          </div>
-
-          {/* Image Column - col-4 */}
-          <div className="col-lg-4 col-md-5">
-            <img 
-                src={ChatImg} 
-                alt="End-to-end encrypted chat interface" 
-                className="img-fluid logo-glow"
-                style={{ 
-                  width: '100%',
-                  maxHeight: '500px',
-                  objectFit: 'contain',
-                }}
-              />
-          </div>
-        </div>
-
-        {/* Row 4: Image on left (col-4), Text on right (col-8) */}
-        <div className="row align-items-center mb-5">
-          {/* Image Column - col-4 */}
-          <div className="col-lg-4 col-md-5 order-2 order-md-1">
-            <img 
-                src={PollImg} 
-                alt="Anonymous poll creation interface" 
-                className="img-fluid logo-glow"
-                style={{ 
-                  width: '100%',
-                  maxHeight: '500px',
-                  objectFit: 'contain',
-                }}
-              />
-          </div>
-
-          {/* Text Column - col-8 */}
-          <div className="col-lg-8 col-md-7 mb-4 mb-md-0 order-1 order-md-2">
-            <div className="golden-orange-form-container">
-              <section>
-                <div className="d-flex align-items-center mb-4">
-                  <div className="me-3">
-                    <i className="fas fa-hourglass-end fa-2x" style={{ color: '#ff6a00' }}></i>
-                  </div>
-                  <div>
-                    <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Disappearing Messages</h2>
-                    <div className="kalesh-divider" style={{ width: '100px' }}></div>
-                  </div>
-                </div>
-                
-                <div className="glass-card p-4">
-                  <p className="mb-0" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                    Enable disappearing messages on Kalesh for secure, self-destructing chats that 
-                    automatically delete after a set time, ensuring privacy and data protection. Take 
-                    control of your digital footprint.
-                  </p>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional footer if needed space*/}
-        
       </div>
 
-      {/* Add Font Awesome for icons */}
-      <link 
-        rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-      />
+      {/* For collaborations and promotions */}
+
+      {/* BETWEEN TEXT */}
+      <div className="promo-between-text container text-center ">
+        <h2 className="promo-between-title fs-1 fw-bold">
+          For collaboration and promotion.
+        </h2>
+      </div>
+
+      {/* FORM */}
+      <div className="promo-form-container gold-theme">
+        <div className="promo-between-text container text-center ">
+          <h2 className="promo-between-title fs-1 fw-bold">Contact Us.</h2>
+        </div>
+        <form className="promo-form gold-form" onSubmit={handleSubmit}>
+          {/* NAME */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">👤</span> NAME
+            </label>
+            <input
+              name="name"
+              placeholder="Enter your full name"
+              value={form.name}
+              onChange={handleChange}
+            />
+            {errors.name && <small>{errors.name}</small>}
+          </div>
+
+          {/* EMAIL */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">📧</span> E-MAIL ID
+            </label>
+            <input
+              name="email"
+              placeholder="Enter your email address"
+              value={form.email}
+              onChange={handleChange}
+            />
+            {errors.email && <small>{errors.email}</small>}
+          </div>
+
+          {/* PHONE */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">📞</span> PHONE NO
+            </label>
+            <input
+              name="phone"
+              placeholder="Enter your phone number"
+              value={form.phone}
+              onChange={handleChange}
+            />
+            {errors.phone && <small>{errors.phone}</small>}
+          </div>
+
+          {/* MESSAGE */}
+          <div className="gold-field">
+            <label>
+              <span className="icon">💬</span> MESSAGE
+            </label>
+            <textarea
+              name="message"
+              placeholder="Write your message"
+              value={form.message}
+              onChange={handleChange}
+            />
+            {errors.message && <small>{errors.message}</small>}
+          </div>
+
+          {/* BUTTON */}
+          <button className="gold-button" disabled={loading}>
+            {loading ? "Sending..." : "SEND MESSAGE →"}
+          </button>
+
+          {success && <p className="status">{success}</p>}
+        </form>
+      </div>
     </div>
   );
-};
+}
 
-export default Privacy;
+export default Promotions;
