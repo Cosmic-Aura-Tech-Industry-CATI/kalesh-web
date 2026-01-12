@@ -8,6 +8,9 @@ import sid from "../assets/Siddhant_Shekhar.png";
 import "./about.css";
 
 function About() {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [activeSection, setActiveSection] = useState("hero");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
