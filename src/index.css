@@ -2224,3 +2224,14 @@ a:focus {
     backdrop-filter: none;
   }
 }
+
+/* ===== REMOVE TAP HIGHLIGHT FOR MOBILE ===== */
+.nav-link:focus,
+.navbar-toggler:focus,
+.footer-list a:focus,
+.coming-soon-btn:focus,
+button:focus,
+a:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
