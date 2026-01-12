@@ -2235,3 +2235,95 @@ a:focus {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* ===== RESPONSIVE NAVBAR STYLES ===== */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 106, 0, 0.2);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .mobile-menu-logo {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 106, 0, 0.3);
+  }
+  
+  .mobile-menu-logo img {
+    filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.5));
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0;
+  }
+  
+  .nav-item {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .nav-link {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 106, 0, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .nav-link:hover::before {
+    left: 100%;
+  }
+  
+  .nav-link:hover {
+    color: #ff6a00 !important;
+    background: rgba(255, 106, 0, 0.1);
+    transform: translateX(5px);
+  }
+  
+  .mobile-menu-copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 106, 0, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  
+  .navbar-toggler {
+    border: 1px solid rgba(255, 106, 0, 0.5);
+    border-radius: 5px;
+    padding: 8px 12px;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 106, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+}
