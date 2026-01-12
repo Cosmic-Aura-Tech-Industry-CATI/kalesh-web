@@ -30,6 +30,7 @@
   min-height: 100vh;
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
 }
 
