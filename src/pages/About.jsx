@@ -75,7 +75,7 @@ function About() {
       name: "Swatantra Singh",
       role: "CFO",
       description:
-        "Swatantra Singh serves as the CFO of Kalesh, managing the company's financial strategy and sustainability. She oversees budgeting, revenue planning, unit economics, and investor financials, ensuring disciplined growth and strong profitability as Kalesh scales.",
+        "Swatantra Singh serves as the CFO of Kalesh, managing the company's financial strategy and sustainability. He oversees budgeting, revenue planning, unit economics, and investor financials, ensuring disciplined growth and strong profitability as Kalesh scales.",
       linkedin: "https://www.linkedin.com/in/swatantra-singh308/",
       image: swat,
     },

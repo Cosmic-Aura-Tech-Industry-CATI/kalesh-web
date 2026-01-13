@@ -24,7 +24,7 @@ function SecurityAdvisory() {
             {/* Header with enhanced glass effect */}
             <div className="glass-header mb-5">
               <h1 className="text-center" style={{ color: '#ff6a00' }}>Security Advisory</h1>
-              <p className="text-center mt-3"><strong>Last Updated:</strong> [Insert Date]</p>
+              <p className="text-center mt-3"><strong>Last Updated:</strong> January 12, 2026</p>
             </div>
 
             {/* Introduction with subtle glass panel */}

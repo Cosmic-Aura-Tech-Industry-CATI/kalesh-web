@@ -17,7 +17,7 @@ function TermsAndConditions() {
           <div className="col-12 col-lg-10 col-xl-9 px-md-5 px-3">
             <div className="glass-header mb-5">
               <h1>Terms & Conditions</h1>
-              <p className="last-updated"><strong>Last Updated:</strong> [Insert Date]</p>
+              <p className="last-updated"><strong>Last Updated:</strong> January 12, 2026</p>
             </div>
 
             <div className="guidelines-intro mb-5">
