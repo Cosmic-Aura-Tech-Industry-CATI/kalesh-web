@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../index.css';
 
 // Import images from assets folder
@@ -9,7 +10,16 @@ import PollImg from '../assets/Anno-opinion.png';
 
 const Privacy = () => {
   return (
-    <div className="privacy-page" style={{
+    <>
+      <Helmet>
+        <title>Kalesh Privacy Overview – How We Protect Anonymity</title>
+        <meta
+          name="description"
+          content="Understand how Kalesh protects user privacy, anonymity, and data safety on India's anonymous social media platform."
+        />
+        <link rel="canonical" href="https://thekalesh.com/privacy" />
+      </Helmet>
+      <div className="privacy-page" style={{
       backgroundColor: '#0b0b0b',
       color: '#ffffff',
       minHeight: '100vh',
@@ -202,11 +212,12 @@ const Privacy = () => {
       </div>
 
       {/* Add Font Awesome for icons */}
-      <link 
-        rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
     </div>
+    </>
   );
 };
 

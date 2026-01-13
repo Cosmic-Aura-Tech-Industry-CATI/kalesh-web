@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import shikhar from "../assets/Shikhar_Dixit.png";
 import swat from "../assets/Swatantra_Singh.png";
 import nish from "../assets/Nishkarsh_Mishra.png";
@@ -159,7 +160,17 @@ function About() {
   };
 
   return (
-    <div className="about-page-wrapper">
+    <>
+      <Helmet>
+        <title>About Kalesh – India’s First Anonymous Opinion Platform</title>
+        <meta
+          name="description"
+          content="Learn about Kalesh, India’s first real-time anonymous opinion and polling platform built for Gen Z and judgment-free expression."
+        />
+        <link rel="canonical" href="https://thekalesh.com/about" />
+      </Helmet>
+
+      <div className="about-page-wrapper">
       {/* Animated Background Particles */}
       <div className="animated-particles">
         {[...Array(20)].map((_, i) => (
@@ -494,6 +505,7 @@ function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 

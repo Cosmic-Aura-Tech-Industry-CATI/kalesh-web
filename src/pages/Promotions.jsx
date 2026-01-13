@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 function Promotions() {
   useEffect(() => {
@@ -64,7 +65,17 @@ function Promotions() {
   };
 
   return (
-    <div className="promo-page">
+    <>
+      <Helmet>
+        <title>Promotions & Collaborations – Partner with Kalesh</title>
+        <meta
+          name="description"
+          content="Explore partnership opportunities with Kalesh. Connect for influencer collaborations, brand partnerships, and promotional support. Let's build something amazing together."
+        />
+        <link rel="canonical" href="https://thekalesh.com/promotions" />
+      </Helmet>
+
+      <div className="promo-page">
       {/* IMAGE + TEXT */}
       <div className="promo-info-container">
         <div className="promo-row">
@@ -168,6 +179,7 @@ function Promotions() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 

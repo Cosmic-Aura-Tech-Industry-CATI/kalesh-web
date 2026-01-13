@@ -1,4 +1,5 @@
 import { useState , useEffect} from "react";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 
 function ContactUs() {
@@ -100,7 +101,17 @@ function ContactUs() {
   ];
 
   return (
-    <div className="contact-us-container">
+    <>
+      <Helmet>
+        <title>Contact Us – Get in Touch with Kalesh Team Anonymously</title>
+        <meta
+          name="description"
+          content="Contact the Kalesh team anonymously. Get support, share feedback, or learn more about our anonymous social media platform. Privacy-protected communication."
+        />
+        <link rel="canonical" href="https://thekalesh.com/contact-us" />
+      </Helmet>
+
+      <div className="contact-us-container">
       {/* Background Elements */}
       <div className="contact-glow-1"></div>
       <div className="contact-glow-2"></div>
@@ -316,6 +327,7 @@ function ContactUs() {
         </section>
       </div>
     </div>
+    </>
   );
 }
 

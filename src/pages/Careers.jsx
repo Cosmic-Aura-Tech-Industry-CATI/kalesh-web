@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useEffect } from 'react';
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 
 function Careers() {
@@ -69,7 +70,17 @@ function Careers() {
   };
 
   return (
-    <div className="container-fluid careers-page px-0">
+    <>
+      <Helmet>
+        <title>Careers at Kalesh – Join Our Anonymous Social Media Team</title>
+        <meta
+          name="description"
+          content="Join the Kalesh team and build the future of anonymous social media. We're looking for passionate individuals to create a safe, judgment-free platform. Apply now!"
+        />
+        <link rel="canonical" href="https://thekalesh.com/careers" />
+      </Helmet>
+
+      <div className="container-fluid careers-page px-0">
       {/* TOP HEADING */}
       <div className="container text-center py-5">
         <h1 className="careers-title">
@@ -301,6 +312,7 @@ function Careers() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

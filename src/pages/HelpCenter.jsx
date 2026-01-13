@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 import { useEffect } from 'react';
+import { Helmet } from "react-helmet-async";
 import "./helpcenter.css";
 
 const HelpCenter = () => {
@@ -194,7 +195,17 @@ const HelpCenter = () => {
   }, []);
 
   return (
-    <div className="help-center-container">
+    <>
+      <Helmet>
+        <title>Help Center – Kalesh Anonymous Support & FAQs</title>
+        <meta
+          name="description"
+          content="Get help with Kalesh's anonymous platform. Find answers to FAQs about privacy, safety, polls, and more. 100% anonymous support."
+        />
+        <link rel="canonical" href="https://thekalesh.com/helpcenter" />
+      </Helmet>
+
+      <div className="help-center-container">
       {/* Animated Background Elements - Reduced opacity for pure black theme */}
       <div className="bg-glow-1"></div>
       <div className="bg-glow-2"></div>
@@ -376,7 +387,8 @@ const HelpCenter = () => {
         </section>
       </div>
     </div>
+    </>
   );
-};
+}
 
 export default HelpCenter;

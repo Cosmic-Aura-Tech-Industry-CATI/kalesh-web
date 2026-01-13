@@ -1,19 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ================= BASIC ================= -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- FONT AWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <!-- ================= VIEWPORT ================= -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kalesh-web</title>
+
+    <!-- ================= TITLE (SEO) ================= -->
+    <title>
+      Kalesh – India’s Anonymous Opinion & Live Polling Social Platform
+    </title>
+
+    <!-- ================= DESCRIPTION (VERY IMPORTANT) ================= -->
+    <meta
+      name="description"
+      content="Kalesh is India’s first real-time anonymous opinion and live polling social platform. Share honest opinions, vote instantly, and express freely without identity or judgment."
+    />
+
+    <!-- ================= KEYWORDS ================= -->
+    <meta
+      name="keywords"
+      content="anonymous social media, live polls app, anonymous opinion platform, gen z social app, polling app india, kalesh app"
+    />
+
+    <!-- ================= ROBOTS ================= -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================= CANONICAL ================= -->
+    <link rel="canonical" href="https://thekalesh.com/" />
+
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- ================= THEME ================= -->
+    <meta name="theme-color" content="#0f0f0f" />
+
+    <!-- ================= OPEN GRAPH (SOCIAL SHARING) ================= -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kalesh – Anonymous Opinions & Live Polls" />
+    <meta
+      property="og:description"
+      content="Vote, share opinions, and engage anonymously with real-time live polls on Kalesh."
+    />
+    <meta property="og:url" content="https://thekalesh.com/" />
+    <meta property="og:image" content="https://thekalesh.com/og-image.jpg" />
+    <meta property="og:site_name" content="Kalesh" />
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kalesh – Anonymous Opinion Platform" />
+    <meta
+      name="twitter:description"
+      content="India’s first real-time anonymous opinion and polling social platform."
+    />
+    <meta name="twitter:image" content="https://thekalesh.com/og-image.jpg" />
+
+    <!-- ================= FONT AWESOME (PERFORMANCE OPTIMIZED) ================= -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      />
+    </noscript>
+
+    <!-- ================= STRUCTURED DATA (GOOGLE) ================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kalesh",
+        "url": "https://thekalesh.com",
+        "logo": "https://thekalesh.com/logo.png",
+        "description": "India’s first real-time anonymous opinion and live polling social platform.",
+        "sameAs": [
+          "https://www.instagram.com/thekalesh",
+          "https://twitter.com/thekalesh"
+        ]
+      }
+    </script>
   </head>
+
   <body>
+    <noscript>
+      Kalesh requires JavaScript to work properly. Please enable JavaScript.
+    </noscript>
+
     <div id="root"></div>
+
+    <!-- ================= MAIN SCRIPT ================= -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
