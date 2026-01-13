@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.thekalesh.com/</loc>
-    <priority>1.00</priority>
+    <loc>https://thekalesh.com/</loc>
+    <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/about</loc>
-    <priority>0.80</priority>
+    <loc>https://thekalesh.com/about</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/careers</loc>
-    <priority>0.60</priority>
+    <loc>https://thekalesh.com/privacy</loc>
+    <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/community-guidelines</loc>
-    <priority>0.70</priority>
+    <loc>https://thekalesh.com/promotions</loc>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/help-center</loc>
-    <priority>0.70</priority>
+    <loc>https://thekalesh.com/careers</loc>
+    <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/privacy-policy</loc>
-    <priority>0.60</priority>
+    <loc>https://thekalesh.com/contactus</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://thekalesh.com/helpcenter</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://thekalesh.com/termsandconditions</loc>
+    <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/terms-and-conditions</loc>
-    <priority>0.60</priority>
+    <loc>https://thekalesh.com/privacypolicy</loc>
+    <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/security-advisory</loc>
-    <priority>0.50</priority>
+    <loc>https://thekalesh.com/communityguidelines</loc>
+    <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.thekalesh.com/contact-us</loc>
-    <priority>0.50</priority>
+    <loc>https://thekalesh.com/securityadvisory</loc>
+    <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
 
