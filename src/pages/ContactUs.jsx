@@ -103,8 +103,8 @@ function ContactUs() {
   return (
     <>
       <SEO
-        title="Contact Us – Get in Touch with Kalesh Team Anonymously"
-        description="Contact the Kalesh team anonymously. Get support, share feedback, or learn more about our anonymous social media platform. Privacy-protected communication."
+        title="Get in Touch | Kalesh"
+        description="Contact the Kalesh team anonymously. We're here to help."
       />
 
       <div className="contact-us-container">

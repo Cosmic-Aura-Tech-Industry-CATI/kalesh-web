@@ -10,8 +10,8 @@ function Home() {
     <>
       {/* ================= SEO META ================= */}
       <SEO
-        title="Kalesh – India’s First Anonymous Opinion & Live Polling Platform"
-        description="Kalesh is India's first anonymous social media platform for real-time opinions and live polls. Share honestly, vote instantly, and express freely without identity or judgment."
+        title="Kalesh — India’s Anonymous Social Media Platform"
+        description="Kalesh is India’s anonymous social media platform where you can speak freely without revealing your identity."
         ogTitle="Kalesh – Anonymous Opinions & Live Polls"
         ogDescription="Vote, share opinions, and engage anonymously with real-time live polls on Kalesh."
         twitterTitle="Kalesh – Anonymous Opinion Platform"
