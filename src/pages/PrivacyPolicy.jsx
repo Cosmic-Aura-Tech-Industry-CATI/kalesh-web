@@ -8,7 +8,12 @@ function PrivacyPolicy() {
   }, []);
 
   return (
-    <div className="glass-container">
+    <>
+      <Helmet>
+        <title>Privacy Policy - Kalesh</title>
+        <meta name="description" content="Read Kalesh's Privacy Policy to understand how we collect, use, and protect your data on our anonymous social media platform." />
+      </Helmet>
+      <div className="glass-container">
       <div className="glass-top-gradient"></div>
       <div className="glass-bottom-gradient"></div>
       <div className="glass-inner-glow"></div>
@@ -359,6 +364,7 @@ function PrivacyPolicy() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

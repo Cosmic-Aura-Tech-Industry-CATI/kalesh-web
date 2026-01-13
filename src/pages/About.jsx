@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 import shikhar from "../assets/Shikhar_Dixit.png";
 import swat from "../assets/Swatantra_Singh.png";
 import nish from "../assets/Nishkarsh_Mishra.png";
@@ -161,14 +161,10 @@ function About() {
 
   return (
     <>
-      <Helmet>
-        <title>About Kalesh – India’s First Anonymous Opinion Platform</title>
-        <meta
-          name="description"
-          content="Learn about Kalesh, India’s first real-time anonymous opinion and polling platform built for Gen Z and judgment-free expression."
-        />
-        <link rel="canonical" href="https://thekalesh.com/about" />
-      </Helmet>
+      <SEO
+        title="About Kalesh – India’s First Anonymous Opinion Platform"
+        description="Learn about Kalesh, India's first real-time anonymous opinion and polling platform built for Gen Z and judgment-free expression."
+      />
 
       <div className="about-page-wrapper">
       {/* Animated Background Particles */}

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 function Home() {
   useEffect(() => {
@@ -9,50 +9,14 @@ function Home() {
   return (
     <>
       {/* ================= SEO META ================= */}
-      <Helmet>
-        <title>
-          Kalesh – India’s First Anonymous Opinion & Live Polling Platform
-        </title>
-
-        <meta
-          name="description"
-          content="Kalesh is India’s first anonymous social media platform for real-time opinions and live polls. Share honestly, vote instantly, and express freely without identity or judgment."
-        />
-
-        <link rel="canonical" href="https://thekalesh.com/" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Kalesh – Anonymous Opinions & Live Polls" />
-        <meta
-          property="og:description"
-          content="Vote, share opinions, and engage anonymously with real-time live polls on Kalesh."
-        />
-        <meta property="og:url" content="https://thekalesh.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://thekalesh.com/og-image.jpg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kalesh – Anonymous Opinion Platform" />
-        <meta
-          name="twitter:description"
-          content="India’s first real-time anonymous opinion and polling social platform."
-        />
-        <meta name="twitter:image" content="https://thekalesh.com/og-image.jpg" />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Kalesh",
-            "url": "https://thekalesh.com",
-            "description": "India’s first anonymous opinion and real-time polling social platform for Gen Z."
-          }
-        `}
-        </script>
-      </Helmet>
+      <SEO
+        title="Kalesh – India’s First Anonymous Opinion & Live Polling Platform"
+        description="Kalesh is India's first anonymous social media platform for real-time opinions and live polls. Share honestly, vote instantly, and express freely without identity or judgment."
+        ogTitle="Kalesh – Anonymous Opinions & Live Polls"
+        ogDescription="Vote, share opinions, and engage anonymously with real-time live polls on Kalesh."
+        twitterTitle="Kalesh – Anonymous Opinion Platform"
+        twitterDescription="India's first real-time anonymous opinion and polling social platform."
+      />
 
       {/* ================= PAGE CONTENT ================= */}
       <div className="home-wrapper">
