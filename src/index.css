@@ -907,6 +907,16 @@ a:hover {
   }
 }
 
+/* ===== TABLET FIX (iPad / iPad Air) ===== */
+@media (max-width: 992px) {
+  .careers-image {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+
 
 /* =========================
    CAREER FORM SECTION
