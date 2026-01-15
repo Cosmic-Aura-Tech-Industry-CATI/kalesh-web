@@ -299,7 +299,7 @@ function FAQ() {
             </h1>
             <p className="faq-hero-subtitle">
               Everything you need to know about Kalesh - India's first anonymous social platform.
-              <br />Can't find your answer? <a href="/contact" className="faq-contact-link">Contact our support team →</a>
+              <br />Can't find your answer? <a href="/ContactUs" className="faq-contact-link">Contact our support team →</a>
             </p>
             <div className="faq-stats">
               <div className="faq-stat-item">
@@ -483,10 +483,10 @@ function FAQ() {
               <br />We typically respond within 2-4 hours.
             </p>
             <div className="final-note-actions">
-              <a href="/contact" className="glass-primary-btn">
+              <a href="/ContactUs" className="glass-primary-btn">
                 Contact Support
               </a>
-              <a href="/help-center" className="glass-secondary-btn">
+              <a href="/helpcenter" className="glass-secondary-btn">
                 Visit Help Center
               </a>
             </div>
