@@ -71,6 +71,11 @@ function Navbar() {
               Promotions
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/faq" onClick={handleLinkClick}>
+              FAQ
+            </Link>
+          </li>
         </ul>
         
         {/* Mobile Menu Copyright */}

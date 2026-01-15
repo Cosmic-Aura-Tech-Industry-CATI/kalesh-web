@@ -16,6 +16,7 @@ const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const CommunityGuidelines = lazy(() => import("./pages/CommunityGuidelines"));
 const SecurityAdvisory = lazy(() => import("./pages/SecurityAdvisory"));
+const FAQ = lazy(() => import("./pages/faq"));
 
 function App() {
   // 🔥 FIX MOBILE 100vh ISSUE (GLOBAL)
@@ -54,6 +55,7 @@ function App() {
             <Route path="/helpcenter" element={<HelpCenter />} />
             <Route path="/termsandconditions" element={<TermsAndConditions />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route
               path="/communityguidelines"
               element={<CommunityGuidelines />}
